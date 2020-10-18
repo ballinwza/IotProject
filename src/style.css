@@ -22,24 +22,38 @@ html {
   box-sizing: border-box; }
 
 .Container-Header {
-  background-color: yellow;
-  position: relative; }
-  .Container-Header-texthead {
-    display: inline-block;
-    padding-left: 1rem; }
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background-color: #861818; }
+  .Container-Header-logo {
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: .5rem;
+    font-size: 2rem; }
   .Container-Header ul {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    display: inline-block;
-    z-index: 1; }
+    justify-content: space-around;
+    display: none; }
     .Container-Header ul li {
-      display: inline-block;
-      padding: 1rem; }
+      list-style: none;
+      color: white;
+      font-weight: bold; }
 
-.iconMenu {
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 2rem; }
+.burger div {
+  width: 2.5rem;
+  height: .3rem;
+  background-color: white;
+  margin: .5rem; }
+
+@media (min-width: 48.05em) {
+  .Container-Header ul {
+    width: 60%;
+    display: flex; }
+    .Container-Header ul li {
+      font-size: 1.4rem;
+      letter-spacing: .3rem; }
+  .Container-Header-logo {
+    font-size: 2rem; }
+  .burger {
+    display: none; } }

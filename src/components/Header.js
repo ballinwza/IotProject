@@ -7,8 +7,8 @@ class Header extends Component {
 
     render() {
         return(
-            <div className="Container-Header">
-                <h1 className="Container-Header-texthead">ARDTech</h1>
+            <nav className="Container-Header">
+                <h1 className="Container-Header-logo">ARDTech</h1>
 
                 <ul>
                     <li>Home</li>
@@ -17,8 +17,12 @@ class Header extends Component {
                     <li>Contact</li>
                 </ul>
 
-                <FontAwesomeIcon icon={faBars} className="iconMenu"/>
-            </div>
+                <div className="burger">
+                    <div className="line1"></div>
+                    <div className="line2"></div>
+                    <div className="line3"></div>
+                </div>
+            </nav>
         )
     } 
 }
