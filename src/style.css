@@ -40,6 +40,10 @@ html {
       color: white;
       font-weight: bold; }
 
+.text-link {
+  text-decoration: none;
+  color: white; }
+
 .burger div {
   width: 2.5rem;
   height: .3rem;
