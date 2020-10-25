@@ -1,10 +1,11 @@
 import React , {Component} from 'react';
+import Slideshow from '../Slideshow';
 
 class Home extends Component {
     render() {
         return(
             <div>
-                Home
+                <Slideshow />
             </div>
         )
     }

@@ -1,0 +1,42 @@
+.Slide-container {
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    border: 1px solid black;
+    padding: 10px;
+    margin: 20px;
+}
+.each-slide {
+    width: 100%;
+
+    & > div {
+        display: flex;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 400px;
+    }
+
+}
+
+.Arrow {
+    width: 30px;
+    height: 30px;
+    background-color: red;
+
+    &-prev {
+        margin-right: -30px;
+    }
+
+    &-next {
+        margin-left: -30px;
+    }
+}
+
+.indicator {
+    padding: 10px;
+    height: 10px;
+    width: 10px;
+}
