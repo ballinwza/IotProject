@@ -26,7 +26,8 @@ html {
   justify-content: space-around;
   align-items: center;
   min-height: 8vh;
-  background-color: #861818; }
+  background-color: #861818;
+  width: 100%; }
   .Container-Header-logo {
     color: white;
     text-transform: uppercase;
@@ -44,11 +45,13 @@ html {
   text-decoration: none;
   color: white; }
 
-.burger div {
-  width: 2.5rem;
-  height: .3rem;
-  background-color: white;
-  margin: .5rem; }
+.burger {
+  cursor: pointer; }
+  .burger div {
+    width: 2.5rem;
+    height: .3rem;
+    background-color: white;
+    margin: .5rem; }
 
 @media (min-width: 48.05em) {
   .Container-Header ul {
@@ -62,11 +65,23 @@ html {
   .burger {
     display: none; } }
 
+footer {
+  background-color: #861818;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 4vh;
+  position: static;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white; }
+
 .Slide-container {
   width: 50%;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  position: static;
+  transform: translateX(50%);
   border: 1px solid black;
   padding: 10px;
   margin: 20px; }

@@ -1,0 +1,16 @@
+footer {
+    background-color: $primary-red-color;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 4vh;
+
+    position: static; 
+    right: 0;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    color: white;
+}

@@ -1,8 +1,7 @@
 .Slide-container {
     width: 50%;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    position: static;
+    transform: translateX(50%);
 
     border: 1px solid black;
     padding: 10px;

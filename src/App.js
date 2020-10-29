@@ -4,11 +4,13 @@ import './style.css';
 
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Header from './components/Header';
+import Footer from './components/Footer';
 import Home from './components/layout/Home';
 import Product from './components/layout/Product';
 import Service from './components/layout/Service';
 import Contact from './components/layout/Contact';
-import signIn from './components/signIn';
+import signIn from './components/layout/signIn';
+
 
 
 class App extends Component {
@@ -30,6 +32,7 @@ class App extends Component {
             <BrowserRouter>
                 <Header />
                 {this.renderRouter()}
+                <Footer />
             </BrowserRouter>
 
         )
