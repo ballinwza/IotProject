@@ -5,6 +5,8 @@ import {Link} from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
+// <li><Link to='/service' className="text-link">Service</Link></li>
+
 class Header extends Component {
     render() {
         return(
@@ -14,7 +16,7 @@ class Header extends Component {
                 <ul>
                     <li><Link to='/' className="text-link">Home</Link></li>
                     <li><Link to='/product' className="text-link">Product</Link></li>
-                    <li><Link to='/service' className="text-link">Service</Link></li>
+                    <li><Link to='/patientsortedlist' className="text-link">Service</Link></li>
                     <li><Link to='/contact' className="text-link">Contact</Link></li>
                     <li><Link to='/signIn' className="text-link">Login</Link></li>
                 </ul>

@@ -11,6 +11,9 @@ import Service from './components/layout/Service';
 import Contact from './components/layout/Contact';
 import signIn from './components/layout/signIn';
 
+import Patient from './displayFirebase/pages/Patient';
+import PatientSortedList from './displayFirebase/pages/PatientSortedList';
+
 
 
 class App extends Component {
@@ -23,6 +26,9 @@ class App extends Component {
                 <Route exact path="/service" component={Service} />
                 <Route exact path="/contact" component={Contact} />
                 <Route exact path="/signIn" component={signIn} />
+
+                <Route exact path="/patientsortedlist" component={PatientSortedList} />
+                <Route path="/patient" component={Patient} /> 
             </Switch>
         )
       }
