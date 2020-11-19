@@ -1,34 +1,56 @@
 import React,{Component} from 'react';
-
 import {Link} from 'react-router-dom';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import LogoARD from '../images/ARDLogo1.png';
+
+//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+//import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 // <li><Link to='/service' className="text-link">Service</Link></li>
 
 class Header extends Component {
     render() {
         return(
-            <nav className="Container-Header">
-                <h1 className="Container-Header-logo">ARDTech</h1>
+            <nav className="navbar navbar-expand-lg ">
 
-                <ul>
-                    <li><Link to='/' className="text-link">Home</Link></li>
-                    <li><Link to='/product' className="text-link">Product</Link></li>
-                    <li><Link to='/patientsortedlist' className="text-link">Service</Link></li>
-                    <li><Link to='/contact' className="text-link">Contact</Link></li>
-                    <li><Link to='/signIn' className="text-link">Login</Link></li>
-                </ul>
+                <Link to='/' className="navbar-brand"  >
+                    <div className="logo-content">
+                        <img src={LogoARD} ></img>
+                    </div>
+                </Link>
 
-                <div className="burger">
-                    <div className="line1"></div>
-                    <div className="line2"></div>
-                    <div className="line3"></div>
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <div className="logo-content">
+                        <img src={LogoARD} ></img>
+                    </div>
+                </button>
+
+                <div className="collapse navbar-collapse " id="navbarMenu">
+                    <ul className="navbar-nav">
+                        <li className="nav-item ">
+                            <Link to='/' className="nav-link">Home</Link>
+                        </li>
+
+                        <li className="nav-item">
+                            <Link to='/product' className="nav-link" >Products</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link to='/patientsortedlist' className="nav-link" >Sevices</Link>
+                        </li>
+
+                        <li className="nav-item">
+                            <Link to='/contact' className="nav-link" href="/">Contact</Link>
+                        </li>
+
+                        <li className="nav-item">
+                            <Link to='/signin' className="nav-link" href="/">SignIn</Link>
+                        </li>
+                    </ul>
                 </div>
+
             </nav>
         )
-    } 
+    }
 }
 
 export default Header;

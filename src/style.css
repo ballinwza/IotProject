@@ -21,49 +21,72 @@ html {
 * {
   box-sizing: border-box; }
 
-.Container-Header {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  min-height: 8vh;
-  background-color: #861818;
-  width: 100%; }
-  .Container-Header-logo {
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: .5rem;
-    font-size: 2rem; }
-  .Container-Header ul {
-    justify-content: space-around;
-    display: none; }
-    .Container-Header ul li {
-      list-style: none;
-      color: white;
-      font-weight: bold; }
+.container-fluid {
+  margin: 0px !important;
+  padding: 0px !important; }
 
-.text-link {
-  text-decoration: none;
-  color: white; }
+.row {
+  margin: 0px !important;
+  padding: 0px !important; }
 
-.burger {
-  cursor: pointer; }
-  .burger div {
-    width: 2.5rem;
-    height: .3rem;
+@keyframes navbarSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50%); }
+  100% {
+    opacity: 1;
+    transform: translateY(0%); } }
+
+.navbar {
+  background-color: rgba(134, 24, 24, 0.8); }
+  .navbar-brand {
+    text-align: center !important; }
+    .navbar-brand .logo-content {
+      background-color: white;
+      width: 8rem;
+      height: 8rem;
+      position: relative;
+      border-radius: 50%; }
+      .navbar-brand .logo-content img {
+        width: 12rem;
+        height: 10rem;
+        padding: 1.5rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); }
+  .navbar-toggler .logo-content {
     background-color: white;
-    margin: .5rem; }
-
-@media (min-width: 48.05em) {
-  .Container-Header ul {
-    width: 60%;
-    display: flex; }
-    .Container-Header ul li {
-      font-size: 1.4rem;
-      letter-spacing: .3rem; }
-  .Container-Header-logo {
-    font-size: 2rem; }
-  .burger {
-    display: none; } }
+    width: 9rem;
+    height: 9rem;
+    position: relative;
+    border-radius: 50%; }
+    .navbar-toggler .logo-content img {
+      width: 10rem;
+      height: 8rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+  .navbar-nav {
+    margin-left: auto;
+    margin-right: 5rem;
+    animation: navbarSlideUp 1s; }
+    .navbar-nav .nav-item {
+      margin-left: 2rem;
+      font-size: 1.7rem;
+      font-weight: bold;
+      padding: 0;
+      border-radius: 1rem; }
+      .navbar-nav .nav-item .nav-link {
+        padding: 3rem 2rem !important;
+        color: white; }
+      .navbar-nav .nav-item:hover {
+        background-color: white;
+        transition: all .3s; }
+        .navbar-nav .nav-item:hover .nav-link {
+          color: #861818;
+          text-shadow: 1px 1px 2px #e2a0a0; }
 
 footer {
   background-color: #861818;
@@ -78,33 +101,46 @@ footer {
   width: 100%;
   color: white; }
 
-.Slide-container {
-  width: 50%;
-  position: static;
-  transform: translateX(50%);
-  border: 1px solid black;
-  padding: 10px;
-  margin: 20px; }
-
 .each-slide {
-  width: 100%; }
+  width: 100%;
+  pointer-events: none;
+  user-select: none;
+  margin-top: -50px; }
+  .each-slide img {
+    width: 100%;
+    height: 100%; }
   .each-slide > div {
     display: flex;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 400px; }
+    width: 100%;
+    height: 100%; }
 
 .Arrow {
-  width: 30px;
-  height: 30px;
-  background-color: red; }
+  color: #e2a0a0;
+  font-size: 4rem;
+  cursor: pointer;
+  padding-top: 5vh;
+  padding-bottom: 5vh; }
+  .Arrow:hover {
+    transition: all .5s;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white; }
   .Arrow-prev {
-    margin-right: -30px; }
+    margin-right: -30px;
+    padding-left: 10px !important; }
   .Arrow-next {
-    margin-left: -30px; }
+    margin-left: -30px;
+    padding-right: 10px !important; }
 
 .indicator {
-  padding: 10px;
-  height: 10px;
-  width: 10px; }
+  border-radius: 50%;
+  margin: -5.5vh .3rem 0 .3rem;
+  height: 12px;
+  width: 12px;
+  background-color: white;
+  z-index: 3;
+  cursor: pointer; }
+  .indicator.active {
+    background-color: #646464; }

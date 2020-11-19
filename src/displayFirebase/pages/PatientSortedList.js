@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
 import {Link} from "react-router-dom";
 import firebaseApp from '../firebaseConnection/firebase';
-//import {firestore} from 'firebase';
 import {sortFunctionByLastestDate} from '../myCustomModules/sortFunction';
 import {getDateDayDifferent ,  setDateFormat, setTimeFormat} from '../myCustomModules/dateFunction';
-import { defaults } from 'request';
+
 
 class PatientSortedList extends Component{
 
@@ -19,9 +18,9 @@ class PatientSortedList extends Component{
                 year : 'numeric',
             },
             userTest : [
-                //"ธราดร อุราสุข",
+                "ธราดร อุราสุข",
                 "ฉัตรบุษกร ขาวแผ้ว",
-                //"ศิรสิทธิ์ ศรีใส",
+                "ศิรสิทธิ์ ศรีใส",
                 "สุรกิจ ขาวแผ้ว",
                 "นันทัชพร นันทปิยะวรรณ",
             ],
@@ -122,7 +121,7 @@ class PatientSortedList extends Component{
 
     showPatient(){
         const arr = Object.values(this.state.dataShowed).sort(sortFunctionByLastestDate);
-        if (arr) {
+        if (arr !== undefined) {
             return arr.map((patient, index) => (
                 
                 <div className="row" key={index}>
@@ -178,7 +177,6 @@ class PatientSortedList extends Component{
     }
 
     render(){
-        console.log(this.state);
         return(
             <div className="container-fluid">
                 <div className="row">

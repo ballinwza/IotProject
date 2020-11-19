@@ -28,6 +28,11 @@ const setTimeFormat = function (time) {
     return timeArray.join(":");
 }
 
+const setDateTimeFormat = function(dateTime){
+    let [date, time] = dateTime.split(" ");
+    return [setDateFormat(date), time];
+}
 
 
-export {setDateFormat, getDateDayDifferent, setTimeFormat};
+
+export {setDateFormat, getDateDayDifferent, setTimeFormat, setDateTimeFormat};

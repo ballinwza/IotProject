@@ -6,29 +6,32 @@ import SlideHome1 from '../images/SlideHome1.jpg';
 import SlideHome2 from '../images/SlideHome2.jpg';
 import SlideHome3 from '../images/SlideHome3.jpg';
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 
 const Slideshow = () => {
     const slideImages = [
       SlideHome1,
-      SlideHome2,
-      SlideHome3
+      SlideHome1
     ];
     
     const fadeProperties = {
-      duration: 10000,
+      duration: 15000,
       pauseOnHover: true,
       indicators: true,
-      prevArrow: <div className="Arrow Arrow-prev"></div>,
-      nextArrow: <div className="Arrow Arrow-next"></div>
+      indicators: i=> (<div className="indicator"></div>),
+      prevArrow: <div className="Arrow Arrow-prev"><FontAwesomeIcon icon={faAngleLeft}/></div>,
+      nextArrow: <div className="Arrow Arrow-next"><FontAwesomeIcon icon={faAngleRight}/></div>
     };
 
     return (
-      <div className="Slide-container">
+      <div className="container-fluid Slide-container">
         <Slide easing="ease" {...fadeProperties}>
           {slideImages.map((each, index) => (
             <div key={index} className="each-slide">
-              <div style={{'backgroundImage': `url(${each})`}}></div>
+              <img src={each}></img>
             </div>
             ))
           }

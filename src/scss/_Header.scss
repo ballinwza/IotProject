@@ -1,68 +1,75 @@
-.Container-Header {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    min-height: 8vh;
-    background-color: $primary-red-color;
-    width: 100%;
+.navbar {
+    background-color: $color-1-2 ;
 
-    &-logo{
-        color: white;
-        text-transform: uppercase;
-        letter-spacing: .5rem;
-        font-size: 2rem;
-    }
+    &-brand {
+        text-align: center !important;
 
-    & ul{
-        justify-content: space-around;
-        display: none;
+        & .logo-content {
+            background-color: $white;
+            width: 8rem; 
+            height: 8rem;
+            position: relative;
+            border-radius: 50%;
 
-        & li {
-            list-style: none;
-            color: white;
-            font-weight: bold;
-        }
-    }
-}
-
-.text-link {
-    text-decoration: none;
-    color: white;
-}
-
-.burger {
-    cursor: pointer;
-
-    & div {
-        width: 2.5rem;
-        height: .3rem;
-        background-color: white;
-        margin: .5rem;
-    }
-}
-
-@include respond (tab-port) {
-    .Container-Header {
-        & ul {
-            width: 60%;
-            display: flex;
-
-            & li {
-                font-size: 1.4rem;
-                letter-spacing: .3rem;
+            & img {
+                width: 12rem;
+                height: 10rem;
+                padding: 1.5rem;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
             }
         }
+    }
 
-        &-logo {
-            font-size: 2rem;
+    &-toggler {
+        & .logo-content {
+            background-color: $white;
+            width: 9rem; 
+            height: 9rem;
+            position: relative;
+            border-radius: 50%;
+
+            & img {
+                width: 10rem;
+                height: 8rem;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+            }
         }
     }
 
-    .burger {
-        display: none;
+    &-nav {
+        margin-left: auto;
+        margin-right: 5rem;
+        animation: navbarSlideUp 1s ;
+    
+        & .nav-item {
+            margin-left: 2rem;
+            font-size: 1.7rem;
+            font-weight: bold;
+            padding: 0;
+            border-radius: 1rem;
+
+            & .nav-link {
+                padding: 3rem 2rem !important;
+                color: $white;
+            }
+
+            &:hover {
+                background-color: $white;
+                transition: all .3s;
+                & .nav-link {
+                    color: $color-1;
+                    text-shadow: 1px 1px 2px $color-2;
+
+                }
+            }
+        }
     }
 }
 
-@include respond(tab-land) {
 
-}

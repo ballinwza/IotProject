@@ -6,49 +6,6 @@ class Home extends Component {
         return(
             <div>
                 <Slideshow />
-                <div>
-                    Home
-                </div>
-                <div>
-                    Home
-                </div>
-                <div>
-                    Home
-                </div>
-                <div>
-                    Home
-                </div>
-                <div>
-                    Home
-                </div>
-                <div>
-                    Home
-                </div>
-                <div>
-                    Home
-                </div>
-                <div>
-                    Home
-                </div>
-                <div>
-                    Home
-                </div>
-                <div>
-                    Home
-                </div>
-                <div>
-                    Home
-                </div>
-                <div>
-                    Home
-                </div>
-                <div>
-                    Home
-                </div>
-                <div>
-                    Home
-                </div>
-                
             </div>
         )
     }
