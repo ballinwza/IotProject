@@ -14,7 +14,7 @@ $breakpoint arguement choice:
 -tab-port
 -tab-land
 -big-desktop
-*/
+
 
 // 1em = 16px
 // เริ่มจากหน้าจอมือถือ
@@ -43,4 +43,24 @@ $breakpoint arguement choice:
     @if $breakpoint == big-desktop {
         @media (min-width: 90.05em) { @content }; // 1440px พอดี
     }
+}
+*/
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == sm {
+        @media (min-width: 576px) { @content };
+    }
+
+    @if $breakpoint == md {
+        @media (min-width: 768px) { @content };
+    }
+
+    @if $breakpoint == lg {
+        @media (min-width: 992px) { @content };
+    }
+
+    @if $breakpoint == xl {
+        @media (min-width: 1200px) { @content };
+    }
+
 }

@@ -1,62 +1,83 @@
 .Slide-container {
-    
-}
-.each-slide {
-    width: 100%;
-    pointer-events: none;
-    user-select: none;
-    margin-top: -50px;
-    
-    & img{
+
+    & .each-slide {
         width: 100%;
-        height: 100%;
+        pointer-events: none;
+        user-select: none;
+        position: relative;
+
+        & img{
+            width: 100%;
+            height: 100%;
+        }
+
+        & .slideContent {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+
+            &-1 {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                text-align: center;
+                color: white;
+                pointer-events: initial;
+            }
+
+            &-2{
+                position: absolute;
+                top: 20%;
+                left: 10%;
+                text-align: start;
+                pointer-events: initial;
+            }
+        }
     }
 
-    & > div {
-        display: flex;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        width: 100%;
-        height: 100%;
+    & .Arrow {
+        color: $color-2;
+        font-size: 4rem;
+        cursor: pointer;
+        padding-top: 5vh;
+        padding-bottom: 5vh;
+
+        &:hover {
+            transition: all .5s;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: $white;
+        }
+
+        &-prev {
+            margin-right: -30px;
+            padding-left: 10px !important;
+            animation: arrowSlideLeft 1s;
+        }
+
+        &-next {
+            margin-left: -30px;
+            padding-right: 10px !important;
+            animation: arrowSlideRight 1s;
+        }
     }
 
+    & .indicator {
+        border-radius: 50%;
+        margin: -9vh .3rem 0 .3rem;
+        height: 12px;
+        width: 12px;
+        background-color: $white;
+        z-index: 3;
+        cursor: pointer;
+
+        &.active {
+            background-color: rgb(100, 100, 100);
+        }
+    }
 }
 
-.Arrow {
-    color: $color-2;
-    font-size: 4rem;
-    cursor: pointer;
-    padding-top: 5vh;
-    padding-bottom: 5vh;
 
-    &:hover {
-        transition: all .5s;
-        background-color: rgba(0, 0, 0, 0.5);
-        color: $white;
-    }
 
-    &-prev {
-        margin-right: -30px;
-        padding-left: 10px !important;
-    }
 
-    &-next {
-        margin-left: -30px;
-        padding-right: 10px !important;
-    }
-}
-
-.indicator {
-    border-radius: 50%;
-    margin: -5.5vh .3rem 0 .3rem;
-    height: 12px;
-    width: 12px;
-    background-color: $white;
-    z-index: 3;
-    cursor: pointer;
-
-    &.active {
-        background-color: rgb(100, 100, 100);
-    }
-}

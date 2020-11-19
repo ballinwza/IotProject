@@ -49,7 +49,7 @@ class Patient extends Component {
     render(){
         return(
             <div className="container-fluid">
-                <p><Link exact to="/">back</Link></p>
+                <p><Link to="/patientsortedlist">back</Link></p>
                 <div className="row">
                     <div className="col-4">
                         <div className="row">

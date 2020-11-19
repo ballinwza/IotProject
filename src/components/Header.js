@@ -11,7 +11,7 @@ import LogoARD from '../images/ARDLogo1.png';
 class Header extends Component {
     render() {
         return(
-            <nav className="navbar navbar-expand-lg ">
+            <nav className="navbar navbar-expand-md ">
 
                 <Link to='/' className="navbar-brand"  >
                     <div className="logo-content">

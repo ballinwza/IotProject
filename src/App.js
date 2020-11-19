@@ -27,7 +27,7 @@ class App extends Component {
                 <Route exact path="/signIn" component={signIn} />
 
                 <Route exact path="/patientsortedlist" component={PatientSortedList} />
-                <Route path="/patient" component={Patient} /> 
+                <Route exact path="/patient" component={Patient} /> 
             </Switch>
         )
       }
