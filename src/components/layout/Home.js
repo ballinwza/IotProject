@@ -1,7 +1,9 @@
 import React , {Component} from 'react';
 import Slideshow from '../Slideshow';
 
+
 class Home extends Component {
+    
     render() {
         return(
             <div>
@@ -11,4 +13,4 @@ class Home extends Component {
     }
 }
 
-export default Home;
+export default (Home)

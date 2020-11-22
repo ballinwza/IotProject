@@ -1,5 +1,8 @@
 import React,{Component} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
+import SignedInLink from './layout/SignedInLink'
+import SignedOutLink from './layout/SignedOutLink'
+import { connect } from 'react-redux'
 
 import LogoARD from '../images/ARDLogo1.png';
 
@@ -9,7 +12,10 @@ import LogoARD from '../images/ARDLogo1.png';
 // <li><Link to='/service' className="text-link">Service</Link></li>
 
 class Header extends Component {
+    
     render() {
+        const {auth} = this.props
+        const link = auth.uid ? <SignedInLink/> : <SignedOutLink/>
         return(
             <nav className="navbar navbar-expand-md ">
 
@@ -18,13 +24,14 @@ class Header extends Component {
                         <img src={LogoARD} ></img>
                     </div>
                 </Link>
-
+        
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
                     <div className="logo-content">
                         <img src={LogoARD} ></img>
                     </div>
                 </button>
 
+            {/*  เผื่อใช้
                 <div className="collapse navbar-collapse " id="navbarMenu">
                     <ul className="navbar-nav">
                         <li className="nav-item ">
@@ -47,10 +54,16 @@ class Header extends Component {
                         </li>
                     </ul>
                 </div>
-
+            */}
+            {link}
             </nav>
         )
     }
 }
-
-export default Header;
+const mapStateToProps = (state) =>{
+    console.log(state);
+    return{
+        auth: state.firebase.auth
+    }
+}
+export default connect(mapStateToProps)(withRouter(Header));

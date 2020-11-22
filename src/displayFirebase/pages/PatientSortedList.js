@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import {Link} from "react-router-dom";
 import firebaseApp from '../firebaseConnection/firebase';
 import {sortFunctionByLastestDate} from '../myCustomModules/sortFunction';
 import {getDateDayDifferent ,  setDateFormat, setTimeFormat} from '../myCustomModules/dateFunction';
+import { connect } from 'react-redux'
+import { Link, Redirect } from 'react-router-dom'
 
 
 class PatientSortedList extends Component{
@@ -177,6 +178,9 @@ class PatientSortedList extends Component{
     }
 
     render(){
+        const { uid } = this.props;//WOW!! no need to so sth like this.props.authError
+        console.log('uid :',uid)
+        if (!uid) return (<Redirect to = '/' />)
         return(
             <div className="container-fluid">
                 <div className="row">
@@ -192,5 +196,10 @@ class PatientSortedList extends Component{
         
     }
 }
+const mapStateToProps = (state) => {
+    return{
+        uid : state.firebase.auth.uid
+    }
+}
 
-export default PatientSortedList;
+export default connect(mapStateToProps)(PatientSortedList);

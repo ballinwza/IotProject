@@ -9,6 +9,8 @@ import qrImage from '../myCustomModules/qrImage';
 import graphImage from '../myCustomModules/graphImage';
 import saveExcel from '../myCustomModules/saveExcel';
 import saveImage from '../myCustomModules/saveImage';
+import { connect } from 'react-redux'
+import { Link, Redirect } from 'react-router-dom'
 
 class Patient extends Component {
 
@@ -47,6 +49,9 @@ class Patient extends Component {
 
 
     render(){
+        const { uid } = this.props;//WOW!! no need to so sth like this.props.authError
+        console.log('uid :',uid)
+        if (!uid) return (<Redirect to = '/' />)
         return(
             <div className="container-fluid">
                 <p><Link to="/patientsortedlist">back</Link></p>
@@ -142,6 +147,10 @@ const leftCol = (
         <p />
     </div>
 );
+const mapStateToProps = (state) => {
+    return{
+        uid : state.firebase.auth.uid
+    }
+}
 
-
-export default Patient;
+export default connect(mapStateToProps)(Patient);

@@ -9,7 +9,7 @@ import Home from './components/layout/Home';
 import Product from './components/layout/Product';
 import Service from './components/layout/Service';
 import Contact from './components/layout/Contact';
-import signIn from './components/layout/signIn';
+import SignIn from './components/layout/SignIn';
 
 import Patient from './displayFirebase/pages/Patient';
 import PatientSortedList from './displayFirebase/pages/PatientSortedList';
@@ -24,7 +24,7 @@ class App extends Component {
                 <Route exact path="/product" component={Product} />
                 <Route exact path="/service" component={Service} />
                 <Route exact path="/contact" component={Contact} />
-                <Route exact path="/signIn" component={signIn} />
+                <Route exact path="/signIn" component={SignIn} />
 
                 <Route exact path="/patientsortedlist" component={PatientSortedList} />
                 <Route exact path="/patient" component={Patient} /> 

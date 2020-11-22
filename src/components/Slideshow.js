@@ -58,9 +58,16 @@ const Slideshow = () => {
           </div>
 
           <div className="each-slide">
-            <img src={SlideHome1}></img>
-            <div className="slideContent">
-              <h1>Slide3</h1>
+            <img src={SlideHome3}></img>
+            <div className="slideContent-3">
+              <h1>Contact</h1>
+              <p>
+                บริษัทฯได้เป็นส่วนหนึ่งของงานที่ปรึกษาการใช้งานรังสีในภาคอุตสาหกรรม งานวิจัย  <br />
+                ตลอดจนการติดตั้งและใช้งานเครื่องมือวัดรังสี ตั้งแต่ขนาดเล็กไปจนถึงขนาดใหญ่  <br/>
+                โดยเรามีบุคลากรที่มีความรู้ความสามารถเฉพาะทางด้านรังสีโดยเฉพาะ <br/>
+                ที่มีประสบการณ์ทำงานไม่ต่ำกว่า 10 ปีเป็นประกัน
+              </p>
+              <Link exact to='/contact'><button type="button" className="btn btn-dark">More</button></Link>
             </div>
           </div>
         </Slide>

@@ -2,13 +2,14 @@ import React, {Component} from 'react';
 import firebaseApp from '../firebaseConnection/firebase';
 import {firestore} from 'firebase';
 import queryString from 'query-string'
-import {Link} from 'react-router-dom';
 import {sortFunctionByDateTime} from '../myCustomModules/sortFunction';
 import {setDateFormat, setDateTimeFormat} from '../myCustomModules/dateFunction';
 import qrImage from '../myCustomModules/qrImage';
 import graphImage from '../myCustomModules/graphImage';
 import saveExcel from '../myCustomModules/saveExcel';
 import saveImage from '../myCustomModules/saveImage';
+import { connect } from 'react-redux'
+import { Link, Redirect } from 'react-router-dom'
 
 class Patient extends Component {
 
@@ -103,6 +104,9 @@ class Patient extends Component {
     }
 
     leftCol(){
+        const { uid } = this.props;//WOW!! no need to so sth like this.props.authError
+        console.log('uid :',uid)
+        if (!uid) return (<Redirect to = '/' />)
         return (
         <div className="col-4">
             <div className="row h1 text-light font-weight-bold bg-primary pl-2">{this.getParams().name}</div>
@@ -182,6 +186,10 @@ class Patient extends Component {
     }
 }
 
+const mapStateToProps = (state) => {
+    return{
+        uid : state.firebase.auth.uid
+    }
+}
 
-
-export default Patient;
+export default connect(mapStateToProps)(Patient);
