@@ -51,7 +51,7 @@ class Patient extends Component {
     render(){
         const { uid } = this.props;//WOW!! no need to so sth like this.props.authError
         console.log('uid :',uid)
-        if (!uid) return (<Redirect to = '/' />)
+        {/* if (!uid) return (<Redirect to = '/' />)  เผื่อใช้*/}
         return(
             <div className="container-fluid">
                 <p><Link to="/patientsortedlist">back</Link></p>

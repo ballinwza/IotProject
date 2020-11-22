@@ -90,6 +90,14 @@ html {
   100% {
     opacity: 1; } }
 
+@keyframes IconRotateY {
+  0% {
+    transform: rotateY(0deg); }
+  50% {
+    transform: rotateY(90deg); }
+  100% {
+    transform: rotateY(0deg); } }
+
 .navbar {
   background-color: #861818; }
   .navbar-brand {
@@ -143,6 +151,7 @@ html {
 
 footer {
   background-color: #861818;
+  padding: 1rem 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -152,7 +161,26 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%;
-  color: white; }
+  color: white;
+  text-align: center; }
+  footer img {
+    margin: 1rem 0;
+    border-radius: 50%;
+    height: 7rem; }
+  footer .brandLink {
+    color: white;
+    width: 100%;
+    height: 100%;
+    margin: 0 .5rem; }
+    footer .brandLink .brandIcon {
+      font-size: 2rem; }
+    footer .brandLink:hover .brandIcon {
+      transition: color 1s;
+      animation: IconRotateY .8s; }
+      footer .brandLink:hover .brandIcon-facebook {
+        color: #4d8bdb; }
+      footer .brandLink:hover .brandIcon-line {
+        color: #4ddb6c; }
 
 .Slide-container .each-slide {
   width: 100%;

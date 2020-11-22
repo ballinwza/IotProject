@@ -39,7 +39,7 @@ const Slideshow = () => {
                 ตั้งแต่ขนาดเล็กไปจนถึงขนาดใหญ่ โดยเรามีบุคลากรที่มีความรู้ความสามารถเฉพาะทางด้านรังสีโดยเฉพาะ <br/>
                 ที่มีประสบการณ์ทำงานไม่ต่ำกว่า 10 ปีเป็นประกัน
               </p>
-              <Link exact to='/patientsortedlist'><button type="button" className="btn btn-light">More</button></Link>
+              <Link exact to='/service'><button type="button" className="btn btn-light">More</button></Link>
             </div>
           </div>
 

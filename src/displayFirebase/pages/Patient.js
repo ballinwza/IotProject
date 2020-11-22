@@ -106,7 +106,7 @@ class Patient extends Component {
     leftCol(){
         const { uid } = this.props;//WOW!! no need to so sth like this.props.authError
         console.log('uid :',uid)
-        if (!uid) return (<Redirect to = '/' />)
+ 
         return (
         <div className="col-4">
             <div className="row h1 text-light font-weight-bold bg-primary pl-2">{this.getParams().name}</div>
@@ -175,7 +175,7 @@ class Patient extends Component {
     render(){
         return(
             <div className="container-fluid">
-                <p><Link exact to="/">back</Link></p>
+                <p><Link exact to="/patientsortedlist">back</Link></p>
                 <div className="row">
                     {this.leftCol()}
                     {this.rightCol()}
