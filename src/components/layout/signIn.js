@@ -1,7 +1,12 @@
 import React,{Component} from 'react';
 import { connect } from 'react-redux'
 import { signIn } from '../../actions/authActions'
-import { Redirect } from 'react-router-dom'
+import { Link,Redirect } from 'react-router-dom'
+
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faUser,faLock} from '@fortawesome/free-solid-svg-icons';
+
+import LogoARD from '../../images/LogoFooter.jpg'
 
 class SignIn extends Component {
     state ={
@@ -64,24 +69,65 @@ class SignIn extends Component {
         console.log('uid :',uid)
         if (uid) return (<Redirect to = '/' />)
         return(
-            <div className ="container">
-                <form onSubmit={this.handleSubmit} className="white">
-                <h5 className="grey-text text-darken-3">Sign In</h5>
-                <div className="input-field">
-                    <label htmlFor="email">Email</label>
-                    <input type="email" id="email" onChange={this.handleChange}/>
-                </div>
-                <div className="input-field">
-                    <label htmlFor="password">Password</label>
-                    <input type="password" id="password" onChange={this.handleChange}/>
-                </div>
-                <div className="input-field">
-                    <button className="btn pink lighten-1 z-depth-0">Login</button>
-                    <div className = "red-text center">
-                        {authError ? <p>{authError}</p> : null}
+            <div className ="container-fluid contain-login">
+                <div className="row contain-login-2">
+                    <div className="imglogin col-5">
+                        <h2>Sign In</h2>
+                        <h5>Some Text here</h5>
+                        <Link to="/" className="picLog"><img src={LogoARD}></img></Link>
                     </div>
+
+                    <form onSubmit={this.handleSubmit}  className="was-validated col-7">
+                        <div className="form-group row ">
+                            <div className="col-12">
+                                <label htmlFor="email" className='text-label'>Email</label>
+                            </div>
+                            <div className="col-12">
+                                <div className="input-group">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text"><FontAwesomeIcon icon={faUser}/></span>
+                                    </div>
+                                    <input type="email" id="email" className="form-control " onChange={this.handleChange} required placeholder="Email"/>
+                                    <div className="invalid-feedback feedback-text">
+                                        Email was invalid
+                                    </div>
+                                    <div className="valid-feedback feedback-text">
+                                        Successed
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="form-group row">
+                            <div className="col-12">
+                                <label htmlFor="password" className='text-label'>Password</label>
+                            </div>
+                            <div className="col-12">
+                                <div className="input-group">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text"><FontAwesomeIcon icon={faLock}/></span>
+                                    </div>
+                                    <input type="password" id="password" className="form-control" onChange={this.handleChange} required placeholder="Password"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="form-group row ">
+                            <div className="col-12 button-group">
+                                <button className="btn col-12">Submit</button>
+                                <div className = "red-text center">
+                                    {authError ? <p>{authError}</p> : null}
+                                </div>
+                            </div>
+
+                            <div className="textSignin col-12">
+                                Forget <a href="/">Password</a> ?
+                                <div>Don't have an account ? <a href="/">Signup</a></div>
+                            </div>
+                        </div>
+                    </form>
+
                 </div>
-                </form>
             </div>
         )
     }

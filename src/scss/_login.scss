@@ -1,0 +1,77 @@
+.contain-login {
+    background-image: url('./images/Piclogin.jpg');
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+
+    &-2 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background-color: white;
+        box-shadow: 1px 1px 8px 2px rgb(70, 70, 70);
+        min-height: 50vh;
+
+        & .imglogin {
+            background-color: $color-1;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+
+            & .picLog{
+                
+                & img{
+                    margin-top: 50%;
+                    width: 50%;
+                    
+                    background-color: white;
+                    border-radius: 50%;
+                    margin-left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+        }
+
+        & form {
+            padding: 2rem 1rem;
+
+            & .text-label{
+                font-size: .9rem !important;
+            }
+
+            & .feedback-text{
+                text-align: end;
+            }
+
+            & .button-group{
+                margin-top: 20% !important;
+
+                & button{
+                    background-color: $color-1;
+                    color: white;
+                    letter-spacing: .2rem;
+                    font-weight: bold;
+
+                    &:hover {
+                        transition: all .5s;
+                        color: $color-1;
+                        background-color: $color-2;
+                        box-shadow: 0 0 2px 1px $color-2;
+                    }
+                }
+            }
+
+            & .textSignin {
+                text-align: end;
+                margin-top: 10px;
+                color: $color-1;
+            }
+        }
+    }
+
+
+
+    
+}
