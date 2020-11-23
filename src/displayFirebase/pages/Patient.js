@@ -8,8 +8,9 @@ import qrImage from '../myCustomModules/qrImage';
 import graphImage from '../myCustomModules/graphImage';
 import saveExcel from '../myCustomModules/saveExcel';
 import saveImage from '../myCustomModules/saveImage';
-import { connect } from 'react-redux'
-import { Link, Redirect } from 'react-router-dom'
+import { connect } from 'react-redux';
+import { Link, Redirect } from 'react-router-dom';
+import LineChart from '../myCustomModules/LineChart';
 
 class Patient extends Component {
 
@@ -106,7 +107,7 @@ class Patient extends Component {
     leftCol(){
         const { uid } = this.props;//WOW!! no need to so sth like this.props.authError
         console.log('uid :',uid)
- 
+        if (!uid) return (<Redirect to = '/' />)
         return (
         <div className="col-4">
             <div className="row h1 text-light font-weight-bold bg-primary pl-2">{this.getParams().name}</div>
@@ -137,9 +138,12 @@ class Patient extends Component {
             <p />
     
             <div className="row text-light bg-info font-weight-bold pl-2 h5"> Graph Data </div>
+            <LineChart data={this.state}params={this.getParams()}/>
+            {/*
             <div className="row pl-2">dose rate</div>
             <img src={graphImage(this.state)} ></img>
             <div className="col text-right"> index </div>
+            */}
             <p />
         </div>
         )
