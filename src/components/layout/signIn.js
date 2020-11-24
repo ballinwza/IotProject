@@ -8,10 +8,13 @@ import {faUser,faLock} from '@fortawesome/free-solid-svg-icons';
 
 import LogoARD from '../../images/LogoFooter.jpg'
 
+
+
 class SignIn extends Component {
     state ={
         email:'',
-        password:''
+        password:'',
+        overlayInfo:'',
     }
     handleChange = (e) => {
         //console.log(e.target.id)
@@ -24,60 +27,101 @@ class SignIn extends Component {
         console.log(this.state);
         this.props.signIn(this.state);
     }
+
+    slideEvent = (e) => {
+        e.preventDefault();
+        if(this.state.overlayInfo === "-active"){
+            this.setState({overlayInfo:"-disable"});
+        }else {
+            this.setState({overlayInfo:"-active"});
+        }
+    }
     render() {
-        //return(
-            {/*
-            <div id="modal-login">
-                <div>
-                    <h4>Login</h4>
-
-                    <form id="login-form">
-                        <div>
-                            <input type="email" id="login-email" required />
-                            <label for="login-email">Email address</label>
-                        </div>
-                        <div>
-                            <input type="password" id="login-password" required />
-                            <label for="login-password">Your password</label>
-                        </div>
-                        <button >Login</button>
-                    </form>
-                </div>
-
-                <div id="modal-account" >
-                    <div >
-                        <h4>Account details</h4><br />
-                        <div class="account-details"></div>
-                    </div>
-                </div>
-
-                <div >
-                    <ul id="nav-mobile" >
-                        <li >
-                            <a href="/" data-target="modal-account">Account</a>
-                        </li>
-                        <li >
-                            <a href="/" id="logout">Logout</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            */}
+        
         //console.log (this.props)
         const { authError } = this.props;//WOW!! no need to so sth like this.props.authError
         const { uid } = this.props;//WOW!! no need to so sth like this.props.authError
         console.log('uid :',uid)
         if (uid) return (<Redirect to = '/' />)
+
         return(
             <div className ="container-fluid contain-login">
-                <div className="row contain-login-2">
-                    <div className="imglogin col-5">
-                        <h2>Sign In</h2>
-                        <h5>Some Text here</h5>
-                        <Link to="/" className="picLog"><img src={LogoARD}></img></Link>
+
+                <div className="row contain">
+
+                <form  className={`overlay-form overlay-form-1 was-validated col-6 overlay-form-1${this.state.overlayInfo} `}>
+                        <h1>Sign Up</h1>
+                        <div className="form-group row ">
+                            <div className="col-12">
+                                <label htmlFor="email-signup" className='text-label'>Email</label>
+                            </div>
+                            <div className="col-12">
+                                <div className="input-group">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text"><FontAwesomeIcon icon={faUser}/></span>
+                                    </div>
+                                    <input type="email" id="email-signup" className="form-control " required placeholder="Email"/>
+                                    <div className="invalid-feedback feedback-text">
+                                        Email was invalid
+                                    </div>
+                                    <div className="valid-feedback feedback-text">
+                                        Successed
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="form-group row">
+                            <div className="col-12">
+                                <label htmlFor="password-signup" className='text-label'>Password</label>
+                            </div>
+                            <div className="col-12">
+                                <div className="input-group">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text"><FontAwesomeIcon icon={faLock}/></span>
+                                    </div>
+                                    <input type="password" id="password-signup" className="form-control" required placeholder="Password"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="form-group row mt-4">
+                            <div className="col-12">
+                                <label htmlFor="code" className='text-label'>Code</label>
+                            </div>
+                            <div className="col-12">
+                                <div className="input-group">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text"><FontAwesomeIcon icon={faLock}/></span>
+                                    </div>
+                                    <input type="text" id="code" className="form-control" required placeholder="Code for registered"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="form-group row ">
+                            <div className="col-12 button-group">
+                                <button className="btn col-12">Sign Up</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div className={`col-6 overlay-info overlay-info${this.state.overlayInfo}`} >
+                        <div className= {`overlay-info-signup${this.state.overlayInfo}`}>
+                            <button className="btn btn-danger" onClick={this.slideEvent}>Sign Up</button>
+                            <h5>Enter your personal details and start journey with us</h5>
+                            <Link to="/" className="picLog"><img src={LogoARD}></img></Link>
+                        </div>
+
+                        <div className={`overlay-info-signin${this.state.overlayInfo}`}>
+                            <button className="btn btn-danger" onClick={this.slideEvent}>Sign In</button>
+                            <h5>To keep connected with us please login with your personal info</h5>
+                            <Link to="/" className="picLog"><img src={LogoARD}></img></Link>
+                        </div>
                     </div>
 
-                    <form onSubmit={this.handleSubmit}  className="was-validated col-7">
+                    <form onSubmit={this.handleSubmit}  className={`overlay-form overlay-form-2${this.state.overlayInfo} was-validated col-6`}>
+                        <h1>Sign In</h1>
                         <div className="form-group row ">
                             <div className="col-12">
                                 <label htmlFor="email" className='text-label'>Email</label>
@@ -114,7 +158,7 @@ class SignIn extends Component {
 
                         <div className="form-group row ">
                             <div className="col-12 button-group">
-                                <button className="btn col-12">Submit</button>
+                                <button className="btn col-12">Sign In</button>
                                 <div className = "red-text center">
                                     {authError ? <p>{authError}</p> : null}
                                 </div>
@@ -122,12 +166,12 @@ class SignIn extends Component {
 
                             <div className="textSignin col-12">
                                 Forget <a href="/">Password</a> ?
-                                <div>Don't have an account ? <a href="/">Signup</a></div>
                             </div>
                         </div>
                     </form>
-
+                    
                 </div>
+
             </div>
         )
     }

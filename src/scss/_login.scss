@@ -5,7 +5,7 @@
     left: 0;
     min-height: 100vh;
 
-    &-2 {
+    & .contain {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -14,18 +14,51 @@
         box-shadow: 1px 1px 8px 2px rgb(70, 70, 70);
         min-height: 50vh;
 
-        & .imglogin {
+        & .overlay-info {
             background-color: $color-1;
             color: white;
             padding: 2rem;
             text-align: center;
+            z-index: 3;
+
+            &-disable{
+                animation: overlayInfo 1s;
+                transform: translateX(0);
+            }
+            &-active{
+                animation: overlayInfo-active 1s;
+                transform: translateX(100%);
+            }
+
+            &-signup {
+                display: block;
+                &-disable {
+                    
+                    display: block;
+                    animation: overlayInfoSlidetoRight 1s;
+                }
+                &-active {
+                    display: none;
+                }
+            }
+
+            &-signin {
+                display: none;
+                &-disable {
+                    display: none;
+                }
+                &-active {
+                    display: block;
+                    animation: overlayInfoSlidetoLeft 1s;
+                }
+            }
 
             & .picLog{
-                
+
                 & img{
                     margin-top: 50%;
                     width: 50%;
-                    
+
                     background-color: white;
                     border-radius: 50%;
                     margin-left: 50%;
@@ -34,8 +67,32 @@
             }
         }
 
-        & form {
+        & .overlay-form {
             padding: 2rem 1rem;
+            position: relative;
+
+            &-1{
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                &-active{
+                    animation: overlayform-1toLeft 1s;
+                }
+                &-disable{
+                    animation: overlayform-1toRight 1s;
+                }
+
+            }
+
+            &-2{
+                &-active{
+                    animation: overlayformSlidetoLeft 1s;
+                }
+                &-disable{
+                    animation: overlayformSlidetoRight 1s;
+                }
+            }
 
             & .text-label{
                 font-size: .9rem !important;
@@ -69,9 +126,14 @@
                 color: $color-1;
             }
         }
+
     }
 
+}
 
-
-    
+#signIn {
+    background-color: blueviolet;
+    & .contain-2 {
+        display: block;
+    }
 }

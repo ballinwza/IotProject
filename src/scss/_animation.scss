@@ -24,3 +24,43 @@
     50%{transform: rotateY(90deg);}
     100%{transform: rotateY(0deg);}
 }
+
+@keyframes overlayInfo-active {
+    0%{transform: translateX(0);}
+    100%{transform: translateX(100%);}
+}
+
+@keyframes overlayInfo {
+    0%{transform: translateX(100%);}
+    100%{transform: translateX(0%);}
+}
+
+@keyframes overlayInfoSlidetoRight {
+    0%{transform: translateX(-40%); opacity: 0;}
+    100%{transform: translateX(0); opacity: 1;}
+}
+
+@keyframes overlayInfoSlidetoLeft {
+    0%{transform: translateX(40%); opacity: 0;}
+    100%{transform: translateX(0%); opacity: 1;}
+}
+
+@keyframes overlayform-1toLeft {
+    0%{left: 10%; opacity: 0; display: none;}
+    100%{left: 0%; opacity: 1; display: block;}
+}
+
+@keyframes overlayform-1toRight {
+    0%{left: 0%; opacity: 1; display: block;}
+    100%{left: 10%; opacity: 0; display: none;}
+}
+
+@keyframes overlayformSlidetoLeft {
+    0%{transform: translateX(0); opacity: 1; display: block;}
+    100%{transform: translateX(-10%); opacity: 0; display: none;}
+}
+
+@keyframes overlayformSlidetoRight {
+    0%{transform: translateX(-10%); opacity: 0; display: none;}
+    100%{transform: translateX(0%); opacity: 1; display: block;}
+}
