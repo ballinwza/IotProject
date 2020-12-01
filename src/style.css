@@ -170,6 +170,18 @@ html {
     opacity: 1;
     display: block; } }
 
+@keyframes heightDown {
+  0% {
+    height: 0%; }
+  100% {
+    height: 100%; } }
+
+@keyframes heightUp {
+  0% {
+    height: 100%; }
+  100% {
+    height: 0%; } }
+
 .navbar {
   background-color: #861818; }
   .navbar-brand {
@@ -402,34 +414,91 @@ footer {
   #signIn .contain-2 {
     display: block; }
 
-.grid-container {
+.grid-container-product {
   display: grid;
-  padding: 10px;
-  grid-template-columns: 40% 40%;
+  padding: 20px;
+  grid-template-columns: 45% 45%;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
   justify-content: space-around;
   align-content: start;
   min-height: 60vh; }
-  .grid-container .grid-item {
-    background-color: hotpink;
+  .grid-container-product .grid-item {
     box-shadow: 2px 2px 6px 2px #535353;
-    min-height: 20vh; }
-    .grid-container .grid-item-1 {
-      position: relative; }
-      .grid-container .grid-item-1 img {
-        width: 100%;
-        height: 100%; }
-      .grid-container .grid-item-1 div {
-        position: absolute;
-        bottom: 20px;
-        left: 20px; }
-      .grid-container .grid-item-1:hover {
-        transition: all 1s;
-        transform: scale(1.2); }
-    .grid-container .grid-item-3 {
+    min-height: 30vh;
+    text-align: center;
+    padding: 30px;
+    margin-top: 20px;
+    color: #861818; }
+    .grid-container-product .grid-item1 {
+      animation: fadeInDown .5s; }
+      .grid-container-product .grid-item1 img {
+        width: 80%;
+        height: 90%; }
+    .grid-container-product .grid-item2 {
+      animation: fadeInRight .8s;
       grid-column-start: 2;
-      grid-column-end: 2;
+      grid-column-end: 3;
       grid-row-start: 1;
-      grid-row-end: 3;
-      width: 40%; }
+      grid-row-end: 3; }
+      .grid-container-product .grid-item2 img {
+        width: 80%;
+        height: 80%; }
+    .grid-container-product .grid-item3 {
+      animation: fadeInUp 1s; }
+      .grid-container-product .grid-item3 img {
+        height: 70%; }
+    .grid-container-product .grid-item4 img {
+      height: auto;
+      width: 50%; }
+    .grid-container-product .grid-item5 img {
+      height: auto;
+      width: 50%; }
+  .grid-container-product .textHover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden; }
+  .grid-container-product .mouseOut {
+    transform: scale(1);
+    transition: all .5s; }
+    .grid-container-product .mouseOut .textHover {
+      animation: heightUp .8s;
+      transition: all .4s; }
+  .grid-container-product .mouseOver {
+    transform: scale(1.03);
+    transition: all .5s;
+    box-shadow: -2px -2px 6px 2px #535353; }
+    .grid-container-product .mouseOver .textHover {
+      color: white;
+      visibility: visible;
+      background-color: rgba(134, 24, 24, 0.8);
+      animation: heightDown .8s;
+      transition: animation .8s ease-in-out; }
+
+.product-item {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(128, 128, 128, 0.541);
+  min-width: 100vw;
+  min-height: 100vh; }
+  .product-item button {
+    position: absolute;
+    top: 0;
+    right: 0; }
+  .product-item1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  .product-item2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  .product-item img {
+    width: 100%;
+    height: 100%; }

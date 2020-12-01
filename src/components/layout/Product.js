@@ -1,32 +1,36 @@
 import React,{Component} from 'react';
 import { connect } from 'react-redux'
-import { Link, Redirect } from 'react-router-dom';
 
-import ARMpic from '../../images/ARMpic.jpg';
+import Productlist from '../Productlist';
+
+import ARMpic from '../../images/ARM.png';
+import Ranger from '../../images/Ranger.jpg';
+import Dosei from '../../images/Dosei.jpg';
+import Rad60 from '../../images/Rad60.jpg';
+import Rad7 from '../../images/Rad7.jpg';
 
 class Product extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+
     render() {
         const { uid } = this.props;
         console.log('uid :',uid)
-
+        console.log(this.state);
+        
         return(
-            <div className='grid-container'>
-                <div className='grid-item grid-item-1'>
-                    <img src={ARMpic}></img>
-                    <div>Area Monitoring</div>
-                </div>
+            <div className='grid-container-product'>
+                <Productlist item="item1" picture={ARMpic} itemname="Area Monitoring"/>
 
-                <div className='grid-item grid-item-2'>
-                    2
-                </div>
+                <Productlist item="item2" picture={Ranger} />
 
-                <div className='grid-item grid-item-3'>
-                    3
-                </div>
+                <Productlist item="item3" picture={Dosei}/>
 
-                <div className='grid-item grid-item-4'>
-                    4
-                </div>
+                <Productlist item="item4" picture={Rad60} />
+
+                <Productlist item="item5" picture={Rad7}/>
             </div>
         )
     }

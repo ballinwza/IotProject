@@ -7,6 +7,8 @@ import Popper from 'popper.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
+import "animate.css/animate.min.css";
+
 import { Provider, useSelector } from 'react-redux'
 import { createStore, applyMiddleware, compose} from 'redux'
 import rootReducer from "./store/reducers/rootReducer"
