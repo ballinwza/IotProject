@@ -127,9 +127,9 @@ class PatientSortedList extends Component{
                 
                 <div className="row" key={index}>
                     <div className={this.getStatusColor(patient)}>{this.getStatus(patient)}</div>
-                    <div className="col-2 "><Link to={this.getGETParamString(patient)}>{patient.name}</Link></div>
-                    <div className="col-1 text-center">{patient.lastestDate}</div>
-                    <div className="col-1 text-center">{patient.lastestTime}</div>
+                    <div className="col "><Link to={this.getGETParamString(patient)}>{patient.name}</Link></div>
+                    <div className="col text-center">{patient.lastestDate}</div>
+                    <div className="col text-center">{patient.lastestTime}</div>
                 </div>
             ));
         }
@@ -149,16 +149,16 @@ class PatientSortedList extends Component{
     }
 
     getStatusColor(patient) {
-        var cName;
+        var cName = "col ";
         switch (this.getStatus(patient)){
             case "Active":
-                cName = "col-1 text-center table-success";
+                cName += "text-center table-success";
                 break;
             case "Inactive":
-                cName = "col-1 text-center table-danger";
+                cName += "text-center table-danger";
                 break;
             case "Test User":
-                cName = "col-1 text-center table-warning";
+                cName += "text-center table-warning";
                 break;
             defaults:
                 cName = "col-md-1 text-center"
@@ -184,13 +184,15 @@ class PatientSortedList extends Component{
         return(
             <div className="container-fluid">
                 <div className="row">
-                    <div className="col-1 text-center text-light bg-dark font-weight-bold">Status</div>
-                    <div className="col-2 text-center text-light bg-dark font-weight-bold">Name</div>
-                    <div className="col-1 text-center text-light bg-dark font-weight-bold">Lastest Date</div>
-                    <div className="col-1 text-center text-light bg-dark font-weight-bold">Lastest Time</div>
+                    <div className="col col-header bg-dark">Status</div>
+                    <div className="col col-header bg-dark">Name</div>
+                    <div className="col col-header bg-dark">Lastest Date</div>
+                    <div className="col col-header bg-dark">Lastest Time</div>
                 </div>
                 
                 {this.showPatient()}
+                <p />
+                <p />
             </div>
         )
         

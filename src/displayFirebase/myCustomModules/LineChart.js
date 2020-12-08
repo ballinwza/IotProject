@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Chart from 'react-google-charts';
+import { Redirect } from 'react-router-dom';
 
 class LineChart extends Component {
 
@@ -50,12 +51,16 @@ class LineChart extends Component {
             return (
             <div>
                 <Chart 
-                    width="500px"
-                    height="200px"
+                    width="750px"
+                    height="400px"
                     chartType="LineChart"
                     loader={<div>Loading Chart</div>}
                     data={this.getData(this.props.data)}
                     options={{
+                        /*chart : {
+                            title : "กราฟแสดงความสัมพันธ์ระหว่างปริมาณ dose-rate ที่วัดจากเครื่อง และ เวลานับตั้งแต่ผู้ป่วยลงทะเบียนครั้งแรก",
+                            subtitle : "hello"
+                        },*/
                         hAxis: {
                             title : 'time in hours'
                         },
@@ -64,9 +69,11 @@ class LineChart extends Component {
                         },
                         series : {
                             0 : {
-                                curveType : 'function'
+                                curveType : 'function',
+                                color : '#861818',
                             }
                         }
+                        
                     }}
                 />
             </div>

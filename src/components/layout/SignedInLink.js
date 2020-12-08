@@ -28,12 +28,12 @@ const SignedInLink =(props) =>{
                             <Link to='/contact' className="nav-link" href="/">Contact</Link>
                         </li>
 
-                        <li className="nav-item">
-                            <li><a onClick={props.signOut} className="nav-link">Log Out</a></li>  {/* ถ้าทำเป็น Link ได้เปลี่ยนเป็น Link */}
+                        <li className="nav-item" >
+                            <Link to='/userInfo' className='nav-link'>ชื่อผู้ใช้</Link>
                         </li>
 
-                        <li className="nav-item" >
-                            <Link to='/patientsortedlist' className='btn btn-floating btn-large pink lighten-1 low-50'>01</Link>
+                        <li className="nav-item">
+                            <li><a onClick={props.signOut} className="nav-link">Log Out</a></li>  {/* ถ้าทำเป็น Link ได้เปลี่ยนเป็น Link */}
                         </li>
                     </ul>
                 </div>

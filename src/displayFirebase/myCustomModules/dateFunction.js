@@ -25,6 +25,9 @@ const setTimeFormat = function (time) {
     if (timeArray[1] === "0") {
         timeArray[1] = "00";
     }
+    if (timeArray[1].length === 1) {
+        timeArray[1] = "0" + timeArray[1];
+    }
     return timeArray.join(":");
 }
 

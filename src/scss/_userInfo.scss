@@ -1,0 +1,41 @@
+.userInfo-container {
+    min-height: 60vh;
+
+    & .row{
+        text-align: center;
+
+        &-1 {
+            .img-content {
+                margin: 5rem 0;
+
+                img{
+                    border-radius: 50%;
+                    height: 50vh;
+                    padding: 2rem;
+                    background-color: $color-1;
+                }
+            }
+
+            .text-content {
+                font-size: 1.8rem;
+            }
+        }
+
+        &-2 {
+            margin: 5rem 0;
+            .icon{
+                font-size: 3.5rem;
+                color: $white;
+                padding: 2rem;
+                margin: 0 2rem;
+                background-color: $color-1;
+                border-radius: 50%;
+
+                &:hover {
+                    background-color: black;
+                    transition: all 1s;
+                }
+            }
+        }
+    }
+}
