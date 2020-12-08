@@ -116,7 +116,7 @@ class Patient extends Component {
 
     render(){
         return(
-            <div className="container-fluid">
+            <div className="container-fluid contain-patient">
                 <p><Link exact to="/patientlist" className="btn btn-danger">back</Link></p>
                 <div className="row">
                     {this.leftCol()}
