@@ -4,6 +4,7 @@ import {sortFunctionByLastestDate} from '../myCustomModules/sortFunction';
 import {getDateDayDifferent ,  setDateFormat, setTimeFormat} from '../myCustomModules/dateFunction';
 import { connect } from 'react-redux'
 import { Link, Redirect } from 'react-router-dom'
+import '../style2.css';
 
 class PatientList extends Component{
 
@@ -26,6 +27,7 @@ class PatientList extends Component{
         await patientCollection.onSnapshot((snapshot) => {
             snapshot.forEach((doc) => {
                 var dateTimeArray = [];
+                var snArray = [];
                 this.setState({
                     [doc.id] : {
                         uuid : doc.id,
@@ -44,6 +46,7 @@ class PatientList extends Component{
                     if (!snapshot2.empty){
                         snapshot2.forEach((doc2) => {
                             dateTimeArray = [...dateTimeArray, doc2.data().date_time.split(" ")].sort().reverse();
+                            snArray = [...snArray, doc2.data().sn]
                         })
                         this.setState({
                             [doc.id] : {
@@ -56,6 +59,7 @@ class PatientList extends Component{
                                 time : setTimeFormat(doc.data().time),
                                 lastestDate : setDateFormat(dateTimeArray[0][0]),
                                 lastestTime : setTimeFormat(dateTimeArray[0][1]),
+                                sn : snArray[0],
                             }
                         });
                     }
@@ -84,8 +88,11 @@ class PatientList extends Component{
 
     getStatus (value) {
         var diff = getDateDayDifferent(value.lastestDate, this.myDate);
-        if (userTest.find(element => element === value.name)) {
-            return "Test User";
+        if (value.sn === undefined) {
+            return "New User";
+        }
+        else if (value.sn === "GP63002") {
+            return "Test User"
         }
         else if (diff > 3) {
             return "Inactive";
@@ -107,6 +114,9 @@ class PatientList extends Component{
             case "Test User":
                 cName += "text-center table-warning";
                 break;
+            case "New User":
+                cName += "text-center table-secondary";
+                break;
             defaults:
                 cName = "col-md-1 text-center"
                 break;
@@ -126,11 +136,11 @@ class PatientList extends Component{
     }
 
     render(){
-        console.log(this.state);
+        //console.log(this.state);
         const { uid } = this.props;//WOW!! no need to so sth like this.props.authError
         if (!uid) return (<Redirect to = '/' />)
         return(
-            <div className="container patientlist-table">
+            <div className="container-fluid">
                 <div className="row">
                     <div className="col col-header bg-dark">Status</div>
                     <div className="col col-header bg-dark">Name</div>

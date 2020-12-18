@@ -111,10 +111,10 @@ class Register extends Component {
                             <option value="หญิง" >หญิง</option>
                         </select>
                         
-                        <div style={titleStyle}>อายุ</div>
+                        <div style={titleStyle}>อายุ (ปี)</div>
                         <input type="text-center" style={myStyle} className="form-control" name="age" onChange={this.onInputChange} />
 
-                        <div style={titleStyle}>ปริมาณไอโอดีนรังสีที่คนไข้ได้รับ</div>
+                        <div style={titleStyle}>ปริมาณไอโอดีนรังสีที่คนไข้ได้รับ (คูรี่; Ci)</div>
                         <input type="text-center" style={myStyle} className="form-control" name="dose" onChange={this.onInputChange} />
 
                         <div style={titleStyle}>วัน-เดือน-ปี</div>
@@ -142,7 +142,7 @@ class Register extends Component {
                             </div>
                         </div>
 
-                        <div style={titleStyle}>เวลา</div>
+                        <div style={titleStyle}>เวลาที่ได้รับสารรังสีครั้งแรก</div>
                         <div className="row mt-4">
                             <div className="col" />
                             <div className="col">

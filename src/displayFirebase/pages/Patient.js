@@ -10,6 +10,8 @@ import saveImage from '../myCustomModules/saveImage';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import LineChart from '../myCustomModules/LineChart';
+import '../style2.css';
+import { type } from 'jquery';
 
 class Patient extends Component {
 
@@ -35,7 +37,6 @@ class Patient extends Component {
 
     leftCol(){
         const { uid } = this.props;//WOW!! no need to so sth like this.props.authError
-        console.log('uid :',uid);
         if (!uid) return (<Redirect to = '/' />)
         return (
         <div className="col col-md">
@@ -73,7 +74,7 @@ class Patient extends Component {
             {this.showPatient()}
             <p />
             <div className="row-highlight"> Graph Data </div>
-            <LineChart data={this.state}params={this.getParams()}/>
+            <LineChart data={this.state} params={this.getParams()}/>
         </div>
         )
     }
@@ -87,10 +88,10 @@ class Patient extends Component {
                 <p />
                 <div className="row">
                     <div className="col">
-                        <button className="btn-download" onClick={() => saveImage(qrImage(this.getParams().uuid))}>Save QR Code Image (.png)</button>
+                        <button className="btn-download" onClick={() => saveImage(qrImage(this.getParams().uuid), this.getParams().name)}>Save QR Code Image (.png)</button>
                     </div>
                     <div className="col">
-                        <button className="btn-download" onClick={() => saveExcel(this.state)}>Save as Microsoft Excel (.csv)</button>
+                        <button className="btn-download" onClick={() => saveExcel(this.state, this.getParams())}>Save as Microsoft Excel (.csv)</button>
                     </div>
                 </div>
                 
@@ -116,8 +117,8 @@ class Patient extends Component {
 
     render(){
         return(
-            <div className="container-fluid contain-patient">
-                <p><Link exact to="/patientlist" className="btn btn-danger">back</Link></p>
+            <div className="container-fluid">
+                <p><Link exact to="/patientsortedlist"></Link></p>
                 <div className="row">
                     {this.leftCol()}
                     {this.rightCol()}

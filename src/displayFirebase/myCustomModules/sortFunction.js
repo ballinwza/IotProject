@@ -23,10 +23,10 @@ const sortFunctionByLastestDate = function (a, b) {
             }
             else{
                 if (a.lastestTime > b.lastestTime){
-                    return 1;
+                    return -1;
                 }
                 else if (a.lastestTime < b.lastestTime){
-                    return -1;
+                    return 1;
                 }
                 else{
                     return 0;
@@ -63,10 +63,10 @@ const sortFunctionByDateTime = function (a,b) {
             }
             else{
                 if (timeA > timeB){
-                    return 1;
+                    return -1;
                 }
                 else if (timeA < timeB){
-                    return -1;
+                    return 1;
                 }
                 else{
                     return 0;
@@ -77,5 +77,18 @@ const sortFunctionByDateTime = function (a,b) {
 
 }
 
+const sortFunctionByHour = function(a,b) {
+    if (typeof(a[0]) === 'string'){
+        return -1
+    }
+    else{
+        if (a[0] < b[0]) {
+            return -1;
+        }
+        else{
+            return 1;
+        }
+    }
+}
 
-export { sortFunctionByLastestDate, sortFunctionByDateTime }
+export { sortFunctionByLastestDate, sortFunctionByDateTime, sortFunctionByHour}
