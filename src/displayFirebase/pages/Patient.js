@@ -21,60 +21,50 @@ import updateFirestore from '../../actions/updatePatientAction'
 
 
 class Patient extends Component {
-    state = {
-        leftColHeader:{
-            name:'',
-            gender:'',
-            date:'',
-            time:'',
-            activity:'',
-            uuid:'',
-            init:true
-        }
 
+    state = {
+        leftColHeader:this.props.leftColHeader
     }
     getParams(){
         //console.log("url: ",this.props.location.search)
         let url = this.props.location.search; 
         let params = queryString.parse(url);
-        if (this.state.leftColHeader.init == true) {
+        if (this.state.leftColHeader.name == null) {
             this.setState({
                 leftColHeader:{
                     name:params.name,
                     gender:params.gender,
-                    date:params.date,
-                    time:params.time,
-                    activity:params.activity,
-                    uuid:params.uuid,
-                    init:false
+                    date:'',
+                    time:'',
+                    activity:'',
+                    uuid:params.uuid
                 }
             })
         }
         return params;
     }
-    handleChangePopup = (id,value) => {
-        console.log(id,value)
+    handleSubmitPopup = (updatedState) => {
+        //change state
+        console.log("handleChangePopup:",updatedState)
         this.setState(prevState => {
             let leftColHeader = { ...prevState.leftColHeader };  // creating copy of state variable jasper
-            leftColHeader[id] = value;                     // update the name property, assign a new value                 
+            leftColHeader.date = updatedState.date;                     // update the name property, assign a new value                 
+            leftColHeader.time = updatedState.time; 
+            leftColHeader.activity = updatedState.activity; 
             console.log(leftColHeader)
             return { leftColHeader };                                 // return new object jasper object
           })
-        console.log(this.state)
-    }
-    handleSubmitPopup = () => {
+
+        //update firebase
         let uuid = this.state.leftColHeader.uuid
-        const data = {
-            date: this.state.leftColHeader.date,
-            time: this.state.leftColHeader.time,
-            activity: this.state.leftColHeader.activity
-        };
+        const data = updatedState;
         console.log(uuid,data)
         this.props.updateFirestore(uuid,data,firebaseApp);
     }
 
     componentDidMount(){
         this.queryDataFromFireStore();
+        this.queryPatientDataFromFireStore()
         
     }
     queryDataFromFireStore(){
@@ -85,6 +75,22 @@ class Patient extends Component {
             snapshot.forEach((doc) => {
                 this.setState({[doc.data().date_time] : doc.data().dose_rate});
             })
+        });
+    }
+    queryPatientDataFromFireStore(){
+        const fs = firebaseApp.firestore();
+        const db = fs.collection("patients");
+        const query = db.doc(this.getParams().uuid);
+        query.onSnapshot((doc) => {
+            if (doc.data()!=null){
+                this.setState(prevState => {
+                    let leftColHeader = { ...prevState.leftColHeader };  // creating copy of state variable jasper
+                    leftColHeader.date = doc.data().date;                     // update the name property, assign a new value                 
+                    leftColHeader.time = doc.data().time;  
+                    leftColHeader.activity = doc.data().activity;  
+                    return { leftColHeader };                                 // return new object jasper object
+                })
+            }
         });
     }
    
@@ -126,7 +132,7 @@ class Patient extends Component {
                     </button>
                 </div>
             </div>
-            <Popup previousData={leftColHeader} handleChange={this.handleChangePopup} handleSubmit={this.handleSubmitPopup}/>
+            <Popup previousData={this.state.leftColHeader} handleChange={this.handleChangePopup} handleSubmit={this.handleSubmitPopup}/>
             <br/>
     
             <div className="row-highlight"> Measured Data </div>
@@ -198,7 +204,8 @@ class Patient extends Component {
 
 const mapStateToProps = (state) => {
     return{
-        uid : state.firebase.auth.uid
+        uid : state.firebase.auth.uid,
+        leftColHeader : state.patient
     }
 }
 const mapDispatchToProps = (dispatch) =>{

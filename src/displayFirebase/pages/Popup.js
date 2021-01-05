@@ -4,14 +4,57 @@ import React,{Component} from 'react'
 
 class Popup extends Component  {
     
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            date: this.props.previousData.date,
+            time: this.props.previousData.time,
+            activity: this.props.previousData.activity
+        }
+        
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        //console.log("updatedState:",this.state)
+        //console.log("this.props:",this.props.previousData.date)
+        if ((this.state.date==null || this.state.date=="") && (prevProps.previousData.date!=this.props.previousData.date)) {
+            this.setState({
+                date: this.props.previousData.date,
+                time: this.props.previousData.time,
+                activity: this.props.previousData.activity
+            })
+            
+            
+        }
+
+    }
+    
     //console.log(uuid)
     handleChange= (e) =>{
         e.preventDefault();
-        this.props.handleChange(e.target.id,e.target.value)
+        this.setState({
+            [e.target.id] : e.target.value                    
+          })
+        console.log(this.state)
+        
     }
     handleSubmit= (e) =>{
         e.preventDefault();
-        this.props.handleSubmit()
+        try{
+            this.props.handleSubmit(this.state)
+        } catch(err){
+            console.log("Error submit update:",err)
+        }
+    }
+    handleClose= (e) =>{
+        e.preventDefault();
+        this.setState({
+            date: this.props.previousData.date,
+            time: this.props.previousData.time,
+            activity: this.props.previousData.activity
+        })
+        
     }
 
     render(){
@@ -34,7 +77,8 @@ class Popup extends Component  {
                             type="text" 
                             class="form-control" 
                             id="date"
-                            value={this.props.previousData.date}
+                            value={this.state.date}
+                            required
 
                         />
                     </div>
@@ -45,7 +89,8 @@ class Popup extends Component  {
                             type="text" 
                             class="form-control" 
                             id="time"
-                            value={this.props.previousData.time}
+                            value={this.state.time}
+                            required
                             
                         />
                     </div>
@@ -56,14 +101,15 @@ class Popup extends Component  {
                             type="text" 
                             class="form-control"
                             id="activity"
-                            value={this.props.previousData.activity}
+                            value={this.state.activity}
+                            required
                             
                         />
                     </div>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button className="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button className="btn btn-secondary" data-dismiss="modal" onClick={this.handleClose}>Close</button>
                     <button className="btn btn-primary" data-dismiss="modal" onClick={this.handleSubmit}>Update</button>
                 </div>
                 </div>
