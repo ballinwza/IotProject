@@ -42,20 +42,35 @@ class productlist extends Component {
 
     render(){
 
-        return(
-            <Link to ={`/product/${this.props.item}`} 
-            className={`grid-item grid-${this.props.item} ${this.state.onItem} ${this.state.offItem}`} 
-            onMouseOver={(e)=>this.mouseOver(e,this.props.item)} 
-            onMouseOut={(e)=>this.mouseOut(e,this.props.item)}
-            >
-                <div className="textHover row align-content-center  ">
-                    <div className="col-12 "> Test {this.props.itemname}</div>
-                    <div className="col-12">Price</div>
-                    <div className="col-12">Information</div>
+        return( 
+            
+                <div className={`container productItem`}>
+                    <Link to ={`/product/${this.props.item}`} >
+                    <div className="row main-container">
+                        <div className="col-5">
+                            <img src={this.props.picture}></img>
+                        </div>
+
+                        <div className="col-7 ">
+                            <div className="primary-content">
+                                <div className="row-cols-1">
+                                    <div className="head-text"> Test {this.props.itemname}</div>
+                                    <div className="price-text">Price {this.props.price}</div>
+                                    <div className="info-text">Information {this.props.info}</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div className="secondary-content">
+                            <div className="secondary-content-text">
+                                test {this.props.moreInfo}
+                            </div>
+                        </div>
+
+                    </div>
+                    </Link>
                 </div>
-                <img src={this.props.picture}></img>
-                <div>{this.props.content}</div>
-            </Link>
+            
         )
     }
 }

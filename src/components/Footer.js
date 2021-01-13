@@ -9,15 +9,35 @@ import { faFacebookSquare, faLine } from "@fortawesome/free-brands-svg-icons";
 class Footer extends Component {
     render() {
         return(
-            <footer className="clearfix">
-                <Link to="/"><img src={LogoFooter}></img></Link>
+            <footer className="clearfix container-fluid">
+               <div className="row-cols-1">
+                    <div className="brand-zone">
+                        <Link to="/"><img src={LogoFooter}></img></Link>
+                    </div>
+    
+                    <div className="icon-zone">
+                        <a className="brandLink" href="/">
+                            <a href="/">
+                                <FontAwesomeIcon className="brandIcon " icon={faLine}/>
+                            </a> 
 
-                <div>
-                    <a href="/" className="brandLink "><FontAwesomeIcon className="brandIcon brandIcon-line" icon={faLine}/></a>
-                    <a href="/" className="brandLink "><FontAwesomeIcon className="brandIcon brandIcon-facebook" icon={faFacebookSquare}/></a>
-                </div>
-
-                Powered by ADVANCED R&D TECHNOLOGY Co., Ltd. Copyright 2014 All right
+                            <div className="line-icon">
+                                <a href="/">
+                                    <FontAwesomeIcon className="brandIcon " icon={faLine}/>
+                                </a> 
+                            </div>
+                        </a>
+                        <div className="brandLink">
+                            <a href="/">
+                                <FontAwesomeIcon className="brandIcon brandIcon-facebook" icon={faFacebookSquare}/>
+                            </a>
+                        </div>
+                    </div>
+    
+                    <div className="text-zone">
+                        Powered by ADVANCED R&D TECHNOLOGY Co., Ltd. Copyright 2014 All right
+                    </div>
+               </div>
             </footer>
         )
     }
