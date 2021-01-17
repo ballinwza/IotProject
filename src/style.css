@@ -190,6 +190,58 @@ html {
   100% {
     transform: rotateX(0deg); } }
 
+.homeHeadText {
+  margin: 5px 0 40px 0; }
+  .homeHeadText .firstText {
+    margin: 20px 0;
+    text-align: center; }
+    .homeHeadText .firstText h1 {
+      font-size: 4rem;
+      color: #861818;
+      font-weight: bold;
+      user-select: none; }
+  .homeHeadText .secondText {
+    text-align: center !important; }
+    .homeHeadText .secondText-container {
+      margin: 0 20px;
+      position: relative !important;
+      background-color: #861818;
+      border-radius: 5px;
+      box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
+      transition: all .5s ease-out; }
+      .homeHeadText .secondText-container a {
+        text-decoration: none; }
+        .homeHeadText .secondText-container a img {
+          height: 350px;
+          width: 100%;
+          border-radius: 5px 5px 0 0; }
+        .homeHeadText .secondText-container a .secondText-head {
+          position: absolute;
+          top: 70%;
+          left: 50%;
+          transform: translateX(-50%);
+          opacity: 0;
+          color: white;
+          text-decoration: none;
+          font-size: 3rem;
+          transition: all .5s ease-out; }
+        .homeHeadText .secondText-container a p {
+          font-size: 1.3rem;
+          margin: 15px 15px 0 15px;
+          padding: 0 10px 20px 10px;
+          color: white; }
+      .homeHeadText .secondText-container:hover {
+        box-shadow: 1px 1px 6px 3px rgba(0, 0, 0, 0.2);
+        transform: scale(1.005) translateY(-2px);
+        transition: all .5s ease-out; }
+        .homeHeadText .secondText-container:hover .secondText-head {
+          top: 65%;
+          opacity: 1;
+          transition: all .5s ease-out; }
+    .homeHeadText .secondText:hover .secondText-container {
+      margin: 0 30px;
+      transition: all .5s ease-out; }
+
 .navbar {
   background-color: #861818; }
   .navbar-brand {
@@ -253,40 +305,87 @@ footer {
   color: white;
   text-align: center; }
   footer img {
-    margin: 1rem 0;
+    margin: 20px 0 16px 0;
     border-radius: 50%;
-    height: 7rem; }
-  footer .icon-zone .brandLink {
-    position: relative;
-    display: inline-block;
-    margin: 0 20px;
-    padding: 0; }
-    footer .icon-zone .brandLink a {
-      color: white;
-      width: 100%;
-      height: 100%;
-      margin: 0 .5rem; }
-    footer .icon-zone .brandLink .brandIcon {
-      font-size: 20rem;
-      padding: 10px;
-      transition: all .5s ease-out; }
-    footer .icon-zone .brandLink .line-icon {
-      position: absolute;
-      top: 0;
-      left: 0;
-      background-color: white;
-      z-index: 1;
-      height: 0%;
-      opacity: 0;
+    height: 8rem; }
+  footer .icon-zone {
+    margin-bottom: 20px; }
+    footer .icon-zone .brandLink {
+      position: relative;
+      display: inline-block;
+      margin: 0 2px;
+      padding: 0;
       border-radius: 5px;
+      transition: all .3s ease-out; }
+      footer .icon-zone .brandLink a {
+        color: white;
+        width: 100%;
+        height: 100%;
+        margin: 0 .5rem; }
+      footer .icon-zone .brandLink .brandIcon {
+        font-size: 3rem;
+        padding: .3rem;
+        transition: all .2s ease-out; }
+      footer .icon-zone .brandLink:hover {
+        background-color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.1); }
+        footer .icon-zone .brandLink:hover a {
+          color: #861818; }
+  footer .text-zone {
+    padding-bottom: 5px; }
+
+.mainServiceContainer {
+  margin: 20px 0;
+  padding: 20px !important; }
+  .mainServiceContainer .HeadText {
+    font-size: 3.5rem;
+    border-bottom: thin solid rgba(0, 0, 0, 0.1);
+    color: #861818; }
+  .mainServiceContainer .first {
+    position: relative;
+    margin: 20px 0; }
+    .mainServiceContainer .first p {
+      padding: 10px; }
+    .mainServiceContainer .first img {
+      width: 90%;
+      height: 100%;
+      border-radius: 5px;
+      box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.1);
       transition: all .5s ease-out; }
-    footer .icon-zone .brandLink:hover a {
-      color: #861818; }
-    footer .icon-zone .brandLink:hover .line-icon {
+    .mainServiceContainer .first .imageSet01 {
+      display: flex;
+      justify-content: center; }
+    .mainServiceContainer .first .imageSet02 {
+      display: flex;
+      justify-content: center;
+      transform: translateY(-100%);
+      opacity: 0;
+      transition: all .3s ease-out; }
+    .mainServiceContainer .first .firstText {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background-color: #a74242;
+      height: 50%;
+      width: 70%;
+      padding: 10px 30px;
+      border-radius: 5px;
+      color: white;
+      font-size: 1.4rem;
+      overflow: hidden;
+      transition: all .3s ease-out; }
+    .mainServiceContainer .first:hover .imageSet02 {
+      transform: translateY(0);
       opacity: 1;
-      height: 100%; }
-      footer .icon-zone .brandLink:hover .line-icon .brandIcon {
-        transition: all .5s ease-out; }
+      transition: all .3s ease-out; }
+    .mainServiceContainer .first:hover .firstText {
+      bottom: 50%;
+      right: 2%;
+      width: 50%;
+      opacity: 1;
+      z-index: 1;
+      transition: all .3s ease-out; }
 
 .Slide-container .each-slide {
   width: 100%;
@@ -349,11 +448,14 @@ footer {
     background-color: #646464; }
 
 .contain-login {
-  background-image: url("./images/Piclogin.jpg");
+  background-image: url("./images/LoginBG.png");
   position: absolute;
   top: 0;
   left: 0;
-  min-height: 100vh; }
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 10; }
   .contain-login .contain {
     position: absolute;
     top: 50%;
@@ -381,6 +483,8 @@ footer {
           animation: overlayInfoSlidetoRight 1s; }
         .contain-login .contain .overlay-info-signup-active {
           display: none; }
+        .contain-login .contain .overlay-info-signup h5 {
+          margin-top: 15px !important; }
       .contain-login .contain .overlay-info-signin {
         display: none; }
         .contain-login .contain .overlay-info-signin-disable {
@@ -388,6 +492,8 @@ footer {
         .contain-login .contain .overlay-info-signin-active {
           display: block;
           animation: overlayInfoSlidetoLeft 1s; }
+        .contain-login .contain .overlay-info-signin h5 {
+          margin-top: 15px !important; }
       .contain-login .contain .overlay-info .picLog img {
         margin-top: 50%;
         width: 50%;
@@ -398,6 +504,10 @@ footer {
     .contain-login .contain .overlay-form {
       padding: 2rem 1rem;
       position: relative; }
+      .contain-login .contain .overlay-form h1 {
+        margin-bottom: 10px;
+        text-align: center;
+        color: #861818; }
       .contain-login .contain .overlay-form-1 {
         position: absolute;
         top: 0;
@@ -564,3 +674,70 @@ footer {
 
 .form-control {
   width: 50%; }
+
+.MainItem {
+  margin: 30px 0; }
+
+.mainContainerItem {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 1.8rem; }
+  .mainContainerItem #mainImage {
+    width: 50%;
+    box-shadow: 1px 1px 5px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; }
+
+.item {
+  font-size: 2rem;
+  user-select: none;
+  margin-top: 5px !important;
+  margin-bottom: 5px !important; }
+  .item .arrowIcon {
+    font-size: 1.8rem;
+    color: white; }
+    .item .arrowIcon-false {
+      transition: all .3s; }
+    .item .arrowIcon-true {
+      transform: rotate(90deg);
+      transition: all .3s; }
+  .item a {
+    cursor: pointer;
+    transition: all .2s ease-out; }
+  .item .headText {
+    background-color: #861818;
+    padding: 5px 30px;
+    color: white; }
+  .item .headName {
+    margin-left: 2%;
+    transition: all .6s ease-out; }
+  .item:hover a {
+    padding: 2px 8px;
+    background-color: white;
+    border-radius: 50%; }
+  .item:hover .arrowIcon {
+    color: #861818 !important; }
+  .itemContent {
+    background-color: rgba(134, 24, 24, 0.3);
+    padding: 20px !important;
+    text-align: center; }
+    .itemContent img {
+      width: 50%; }
+    .itemContent .tableStyle {
+      margin-top: 20px; }
+      .itemContent .tableStyle table {
+        width: 100%;
+        border-collapse: separate; }
+        .itemContent .tableStyle table tr {
+          padding: 20px 20px !important;
+          margin: 20px; }
+        .itemContent .tableStyle table th {
+          font-size: 1.5rem;
+          background-color: #861818;
+          color: white; }
+        .itemContent .tableStyle table td {
+          font-size: 1.2rem;
+          padding: 5px 5px;
+          background-color: white; }
+  .item .detailContainer {
+    font-size: 1.4rem;
+    text-align: start; }

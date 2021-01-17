@@ -3,7 +3,7 @@ footer {
     padding: 1rem 0;
     min-height: 4vh;
 
-    position: static; 
+    position: static;
     right: 0;
     left: 0;
     bottom: 0;
@@ -13,17 +13,20 @@ footer {
     text-align: center;
 
     & img {
-        margin: 1rem 0;
+        margin: 20px 0 16px 0;
         border-radius: 50%;
-        height: 7rem;
+        height: 8rem;
     }
 
    & .icon-zone {
-        & .brandLink {  
+        margin-bottom: 20px;
+        & .brandLink {
             position: relative;
             display: inline-block;
-            margin: 0 20px;
+            margin: 0 2px;
             padding: 0;
+            border-radius: 5px;
+            transition: all .3s ease-out;
             & a{
                 color: white;
                 width: 100%;
@@ -32,38 +35,28 @@ footer {
             }
 
             & .brandIcon{
-                font-size: 20rem;
-                padding: 10px;
-                transition: all .5s ease-out;
+                font-size: 3rem;
+                padding: .3rem;
+                transition: all .2s ease-out;
             }
 
-            & .line-icon{
-                position: absolute;
-                top: 0;
-                left: 0;
-                background-color: white;
-                z-index: 1;
-                height: 0%;
-                opacity: 0;
-                border-radius: 5px;
-                transition: all .5s ease-out;
-            }
+
 
             &:hover {
+                background-color: white ;
+                transform: translateY(-2px) ;
+                box-shadow: 0 0 8px 3px rgba(0,0,0,0.1);
                 & a{
                     color: $color-1;
-                }
-                & .line-icon{
-                    opacity: 1;
-                    height: 100%;
 
-                    & .brandIcon{
-                        
-                        transition: all .5s ease-out;
-                    }
                 }
+
             }
 
         }
+   }
+
+   & .text-zone{
+       padding-bottom: 5px;
    }
 }

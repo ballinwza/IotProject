@@ -2,6 +2,9 @@ import React,{Component} from 'react';
 import { connect } from 'react-redux'
 import { Link, Redirect } from 'react-router-dom'
 
+import ServiceItem from '../ServiceItem';
+
+
 class Service extends Component {
     render() {
         const { uid } = this.props;
@@ -9,7 +12,9 @@ class Service extends Component {
 
         return(
             <div>
-                Service
+                <ServiceItem mainHead="TRAINNING" content="ใส่ข้อความ และเลือกรูปอะไรก็ได้"/>
+                <ServiceItem mainHead="RADIATION SAFETY CONSULTANT" content="ใส่ข้อความ และเลือกรูปอะไรก็ได้"/>
+                <ServiceItem mainHead="REPAIR & CALIBRATION" content="ใส่ข้อความ และเลือกรูปอะไรก็ได้"/>
             </div>
         )
     }

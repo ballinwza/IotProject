@@ -1,9 +1,12 @@
 .contain-login {
-    background-image: url('./images/Piclogin.jpg');
+    background-image: url('./images/LoginBG.png');
     position: absolute;
     top: 0;
     left: 0;
     min-height: 100vh;
+    background-repeat: no-repeat; 
+    background-size: cover;
+    z-index: 10;
 
     & .contain {
         position: absolute;
@@ -40,6 +43,9 @@
                 &-active {
                     display: none;
                 }
+                & h5{
+                    margin-top: 15px !important;
+                }
             }
 
             &-signin {
@@ -50,6 +56,9 @@
                 &-active {
                     display: block;
                     animation: overlayInfoSlidetoLeft 1s;
+                }
+                & h5{
+                    margin-top: 15px !important;
                 }
             }
 
@@ -71,6 +80,11 @@
             padding: 2rem 1rem;
             position: relative;
 
+            & h1{
+                margin-bottom: 10px;
+                text-align: center;
+                color: $color-1;
+            }
             &-1{
                 position: absolute;
                 top: 0;

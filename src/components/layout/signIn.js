@@ -50,7 +50,7 @@ class SignIn extends Component {
                 <div className="row contain">
 
                 <form  className={`overlay-form overlay-form-1 was-validated col-6 overlay-form-1${this.state.overlayInfo} `}>
-                        <h1>Sign Up</h1>
+                        <h1>Register</h1>
                         <div className="form-group row ">
                             <div className="col-12">
                                 <label htmlFor="email-signup" className='text-label'>Email</label>
@@ -107,13 +107,13 @@ class SignIn extends Component {
                     </form>
 
                     <div className={`col-6 overlay-info overlay-info${this.state.overlayInfo}`} >
-                        <div className= {`overlay-info-signup${this.state.overlayInfo}`}>
+                        <div className= {`overlay-info-signup overlay-info-signup${this.state.overlayInfo}`}>
                             <button className="btn btn-danger" onClick={this.slideEvent}>Sign Up</button>
                             <h5>Enter your personal details and start journey with us</h5>
                             <Link to="/" className="picLog"><img src={LogoARD}></img></Link>
                         </div>
 
-                        <div className={`overlay-info-signin${this.state.overlayInfo}`}>
+                        <div className={`overlay-info-signin overlay-info-signin${this.state.overlayInfo}`}>
                             <button className="btn btn-danger" onClick={this.slideEvent}>Sign In</button>
                             <h5>To keep connected with us please login with your personal info</h5>
                             <Link to="/" className="picLog"><img src={LogoARD}></img></Link>
@@ -121,7 +121,7 @@ class SignIn extends Component {
                     </div>
 
                     <form onSubmit={this.handleSubmit}  className={`overlay-form overlay-form-2${this.state.overlayInfo} was-validated col-6`}>
-                        <h1>Sign In</h1>
+                        <h1>Login</h1>
                         <div className="form-group row ">
                             <div className="col-12">
                                 <label htmlFor="email" className='text-label'>Email</label>

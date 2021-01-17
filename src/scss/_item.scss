@@ -1,0 +1,95 @@
+.MainItem{
+    margin: 30px 0;
+}
+.mainContainerItem{
+    text-align: center;
+    margin: 20px 0;
+    font-size: 1.8rem;
+
+    & #mainImage{
+        width: 50%;
+        box-shadow: 1px 1px 5px 3px rgba(0,0,0,0.1);
+        margin-bottom: 20px;
+    }
+}
+.item {
+    font-size: 2rem;
+    user-select: none;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+    
+    & .arrowIcon{
+        font-size: 1.8rem;
+        color: white;
+        &-false{
+            transition: all .3s;
+        }
+        &-true{
+            transform: rotate(90deg);
+            transition: all .3s;
+        }
+    }
+    & a{
+        cursor: pointer;
+        transition: all .2s ease-out;
+    }
+    & .headText{
+        background-color: $color-1;
+        padding: 5px 30px;
+        color: white;
+        
+    }
+    & .headName{
+        margin-left: 2%;
+        transition: all .6s ease-out;
+    }
+    &:hover {
+        & a{
+            padding: 2px 8px;
+            background-color: white;
+            border-radius: 50%;
+        }
+        & .arrowIcon{
+            color: $color-1 !important;
+            
+            
+        }
+        
+    }
+    
+    &Content{
+        background-color: $color-1-2;
+        padding: 20px !important;
+        text-align: center;
+        & img{
+            width: 50%;
+        }
+        & .tableStyle{
+            margin-top: 20px;
+            & table{
+                width: 100%;
+                border-collapse: separate;
+                & tr{
+                    padding: 20px 20px !important;
+                    margin: 20px;
+                }
+                & th{
+                    font-size: 1.5rem;
+                    background-color: $color-1;
+                    color: white;
+                    
+                }
+                & td{
+                    font-size: 1.2rem;
+                    padding: 5px 5px;
+                    background-color: white;
+                }
+            }
+        }
+    }
+
+    & .detailContainer{
+        font-size: 1.4rem;
+        text-align: start;
+    }
+}

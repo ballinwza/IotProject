@@ -21,17 +21,22 @@ class Footer extends Component {
                                 <FontAwesomeIcon className="brandIcon " icon={faLine}/>
                             </a> 
 
-                            <div className="line-icon">
-                                <a href="/">
-                                    <FontAwesomeIcon className="brandIcon " icon={faLine}/>
-                                </a> 
-                            </div>
                         </a>
-                        <div className="brandLink">
+                        <a className="brandLink" href="/">
                             <a href="/">
                                 <FontAwesomeIcon className="brandIcon brandIcon-facebook" icon={faFacebookSquare}/>
                             </a>
-                        </div>
+                        </a>
+                        <a className="brandLink" href="/">
+                            <a href="/">
+                                <FontAwesomeIcon className="brandIcon brandIcon-facebook" icon={faFacebookSquare}/>
+                            </a>
+                        </a>
+                        <a className="brandLink" href="/">
+                            <a href="/">
+                                <FontAwesomeIcon className="brandIcon brandIcon-facebook" icon={faFacebookSquare}/>
+                            </a>
+                        </a>
                     </div>
     
                     <div className="text-zone">
