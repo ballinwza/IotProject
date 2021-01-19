@@ -10,27 +10,27 @@ const SignedOutLink =(props) =>{
     return(
 
         <div className="collapse navbar-collapse " id="navbarMenu">
-                    <ul className="navbar-nav">
-                        <li className="nav-item ">
-                            <Link to='/' className="nav-link">Home</Link>
-                        </li>
+            <ul className="navbar-nav">
+                <li className="nav-item ">
+                    <Link to='/' className="nav-link">Home</Link>
+                </li>
 
-                        <li className="nav-item">
-                            <Link to='/product' className="nav-link" >Products</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link to='/service' className="nav-link" >Sevices</Link>
-                        </li>
+                <li className="nav-item">
+                    <Link to='/product' className="nav-link" >Products</Link>
+                </li>
+                <li className="nav-item">
+                    <Link to='/service' className="nav-link" >Sevices</Link>
+                </li>
 
-                        <li className="nav-item">
-                            <Link to='/contact' className="nav-link" href="/">Contact</Link>
-                        </li>
+                <li className="nav-item">
+                    <Link to='/contact' className="nav-link" href="/">Contact</Link>
+                </li>
 
-                        <li className="nav-item ">
-                            <Link to='/signin' className="nav-link">Login</Link>
-                        </li>
-                    </ul>
-                </div>
+                <li className="nav-item ">
+                    <Link to='/signin' className="nav-link">Login</Link>
+                </li>
+            </ul>
+        </div>
     )
 }
 export default SignedOutLink

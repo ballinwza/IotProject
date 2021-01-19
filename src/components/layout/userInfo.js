@@ -8,7 +8,7 @@ import Logo from '../../images/LogoFooter.jpg';
 class userInfo extends Component {
     render(){
         return(
-            <div className="container-fluid userInfo-container">
+            <div className="container-fluid userInfo-container"> 
                 <div className="row">
                     <div className="col-12 row-1">
                         <div className="img-content"><img src={Logo} /></div>

@@ -18,10 +18,10 @@ class Product extends Component {
     render() {
         const { uid } = this.props;
         console.log('uid :',uid)
-        console.log(this.state);
+        console.log(this.state); 
         
         return(
-            <div className='grid-container-product'>
+            <div className='container'>
                 <Productlist item="item1" picture={ARMpic} itemname="Area Monitoring" price="20,000 Bath" 
                 info="Internal / External GM-tube for Gamma and high energy X-rays"
                 moreInfo="Area Monitoring using for counting radioactive especially X-ray and Gamma-ray"/>

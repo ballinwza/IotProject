@@ -1,6 +1,7 @@
 .mainServiceContainer{
     margin: 20px 0;
-    padding: 20px !important;
+    padding: 5px !important;
+    width: 100%;
     & .HeadText{
         font-size: 3.5rem;
         border-bottom: thin solid rgba(0,0,0,0.1);
@@ -31,12 +32,13 @@
             transition: all .3s ease-out;
         }
         & .firstText{
+            text-align: center;
             position: absolute;
             bottom: 0;
             right: 0;
             background-color: $color-2;
             height: 50%;
-            width: 70%;
+            width: 100%;
             padding: 10px 30px;
             border-radius: 5px;
             color: white;
@@ -52,8 +54,7 @@
             }
             & .firstText{
                 bottom: 50%;
-                right: 2%;
-                width: 50%;
+                width: 100%;
                 opacity: 1;
                 z-index: 1;
                 transition: all .3s ease-out;

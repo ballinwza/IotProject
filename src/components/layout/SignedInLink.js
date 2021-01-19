@@ -12,31 +12,31 @@ const SignedInLink =(props) =>{
     return(
 
         <div className="collapse navbar-collapse " id="navbarMenu">
-                    <ul className="navbar-nav">
-                        <li className="nav-item ">
-                            <Link to='/' className="nav-link">Home</Link>
-                        </li>
+            <ul className="navbar-nav">
+                <li className="nav-item ">
+                    <Link to='/' className="nav-link">Home</Link>
+                </li>
 
-                        <li className="nav-item">
-                            <Link to='/product' className="nav-link" >Products</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link to='/service' className="nav-link" >Sevices</Link>
-                        </li>
+                <li className="nav-item">
+                    <Link to='/product' className="nav-link" >Products</Link>
+                </li>
+                <li className="nav-item">
+                    <Link to='/service' className="nav-link" >Sevices</Link>
+                </li>
 
-                        <li className="nav-item">
-                            <Link to='/contact' className="nav-link" href="/">Contact</Link>
-                        </li>
+                <li className="nav-item">
+                    <Link to='/contact' className="nav-link" href="/">Contact</Link>
+                </li>
 
-                        <li className="nav-item" >
-                            <Link to='/userInfo' className='nav-link'>ชื่อผู้ใช้</Link>
-                        </li>
+                <li className="nav-item" >
+                    <Link to='/userInfo' className='nav-link'>ชื่อผู้ใช้</Link>
+                </li>
 
-                        <li className="nav-item">
-                            <li><a onClick={props.signOut} className="nav-link">Log Out</a></li>  {/* ถ้าทำเป็น Link ได้เปลี่ยนเป็น Link */}
-                        </li>
-                    </ul>
-                </div>
+                <li className="nav-item">
+                    <li><a onClick={props.signOut} className="nav-link">Log Out</a></li>  {/* ถ้าทำเป็น Link ได้เปลี่ยนเป็น Link */}
+                </li>
+            </ul>
+        </div>
     )
 }
 

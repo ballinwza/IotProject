@@ -16,9 +16,9 @@ class ProductItem extends Component {
         }
     }
     render(){
-        return(
-            <div className="container">
-                <div className={`item row`}>
+        return( 
+            <div className="item">
+                <div className={` row justufy-content-center`}>
                     <div className="col-12 headText">
                         <a data-toggle="collapse" href={`#${this.props.itemNum}`} role="button" aria-expanded="false" aria-controls={`${this.props.itemNum}`}>
                             <FontAwesomeIcon className={`arrowIcon arrowIcon-${this.state.icon}`} icon={faChevronRight}
