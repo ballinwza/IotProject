@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import firebaseApp from '../firebaseConnection/firebase';
 import { connect } from 'react-redux';
+import { Link, Redirect } from 'react-router-dom'
 
 class Register extends Component {
 
@@ -90,6 +91,8 @@ class Register extends Component {
   
     
     render(){
+        const { uid } = this.props;
+        if (!uid) return (<Redirect to = '/' />)
         return(
             <div>
                 <div className="row" style={{backgroundColor : "#f1f1f1", height : "60px"}} />
