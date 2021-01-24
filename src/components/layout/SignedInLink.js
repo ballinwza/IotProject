@@ -2,6 +2,9 @@ import React  from 'react'
 import { Link, NavLink, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { signOut } from '../../actions/authActions'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faUser ,faSignOutAlt} from '@fortawesome/free-solid-svg-icons';
+
 //use Link to prevent refresh page(default when we use a href)
 //NavLink tell us which one is active
 const SignedInLink =(props) =>{
@@ -29,11 +32,11 @@ const SignedInLink =(props) =>{
                 </li>
 
                 <li className="nav-item" >
-                    <Link to='/userInfo' className='nav-link'>ชื่อผู้ใช้</Link>
+                    <Link to='/userInfo' className='nav-link'><FontAwesomeIcon icon={faUser}/></Link>
                 </li>
 
                 <li className="nav-item">
-                    <li><a onClick={props.signOut} className="nav-link">Log Out</a></li>  {/* ถ้าทำเป็น Link ได้เปลี่ยนเป็น Link */}
+                    <li><a onClick={props.signOut} className="nav-link"><FontAwesomeIcon icon={faSignOutAlt}/></a></li>  {/* ถ้าทำเป็น Link ได้เปลี่ยนเป็น Link */}
                 </li>
             </ul>
         </div>

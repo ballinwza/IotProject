@@ -12,30 +12,118 @@
     font-weight: bold;
     padding: 5px;
     margin-top: 10px;
+    background-color: $color-1;
+    border-left: thin solid white;
   }
 
-  .col {
-    font-size: 16px;
+  .tableDetail{
+    background-color: rgba(0,0,0,0.1);
+    border-bottom: thin solid white;
+    border-left: thin solid white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 1.4rem;
+    position: relative;
+    
+    & a{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: all .2s ease-out;
+      &:hover{
+        text-decoration: none;
+        color: $color-1;
+        transition: all .2s ease-out;
+      }
+    }
   }
 
-  .row-highlight {
-    font-size: 16px;
+  .headHighlight {
+    font-size: 1.6rem;
     font-weight: bold;
     color: white;
     background-color: #861818;
     padding-left: 15px;
+    width: 100% !important; 
+  }
+
+  .registerData-container{
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    font-size: 1.4rem;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 2px 3px 2px rgba(0,0,0,0.1);
+    min-height: 570px;
+    & .detail{
+      padding: 10px;
+      width: 90%;
+      margin-left: 50%;
+      transform: translateX(-50%);
+      & .textContain{
+        
+        background-color: whitesmoke;
+        margin-bottom: 5px !important;
+        padding: 5px 0 !important;
+      }
+      & .head{
+        font-weight: bold;
+      }
+    }
+
+    & #qr-img{width: 30%;}
+  }
+
+  .Measured-container{
+    margin-bottom: 30px;
+    font-size: 1.4rem;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 2px 3px 2px rgba(0,0,0,0.1);
+
+    & .headTable{
+      text-align: center;
+      font-size: 1.6rem;
+      font-weight: bold;
+      padding: 2.5px 0;
+      color: white;
+      background-color: $color-1;
+      &:not(:last-child){
+        border-right: thin solid white;
+      }
+    }
+
+    & .detailTable{
+      text-align: center;
+      padding: 4px 0;
+      &:not(:last-child){
+        border-right: thin solid $color-1;
+      }
+    }
   }
 
   .btn-download {
-    font-size: 16px;
-    background-color: orangered;
-    border: none;
-    text-align: center;
-    border-radius: 10px;
-    width: inherit;
-    height: inherit;
-    padding: 10px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    & button{
+      font-size: 16px;
+      background-color: $color-1;
+      color: white;
+      border: none;
+      text-align: center;
+      border-radius: 10px;
+      width: inherit;
+      height: inherit;
+      padding: 10px;
+      width: 50%;
+      transition: all .1s;
+      &:hover{
+        background-color: $color-2;
+        transition: all .1s;
+      }
+    }
+    
   }
+
 
   .form-control {
     width: 50%;

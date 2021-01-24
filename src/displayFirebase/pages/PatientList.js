@@ -4,7 +4,7 @@ import {sortFunctionByLastestDate} from '../myCustomModules/sortFunction';
 import {getDateDayDifferent ,  setDateFormat, setTimeFormat} from '../myCustomModules/dateFunction';
 import { connect } from 'react-redux'
 import { Link, Redirect } from 'react-router-dom'
-import '../style2.css';
+
 
 class PatientList extends Component{
 
@@ -77,10 +77,10 @@ class PatientList extends Component{
         if (arr !== undefined) {
             return arr.map((patient, index) => (
                 <div className="row" key={index}>
-                    <div className={this.getStatusColor(patient)}>{this.getStatus(patient)}</div>
-                    <div className="col "><Link to={this.getGETParamString(patient)}>{patient.name}</Link></div>
-                    <div className="col text-center">{patient.lastestDate}</div>
-                    <div className="col text-center">{patient.lastestTime}</div>
+                    <div className={`col-2 tableDetail ${this.getStatusColor(patient)}`}>{this.getStatus(patient)}</div>
+                    <div className="col-5 tableDetail"><Link to={this.getGETParamString(patient)}>{patient.name}</Link></div>
+                    <div className="col-3 tableDetail text-center">{patient.lastestDate}</div>
+                    <div className="col-2 tableDetail text-center">{patient.lastestTime}</div>
                 </div>
             ));
         }
@@ -142,15 +142,13 @@ class PatientList extends Component{
         return(
             <div className="container-fluid">
                 <div className="row">
-                    <div className="col col-header bg-dark">Status</div>
-                    <div className="col col-header bg-dark">Name</div>
-                    <div className="col col-header bg-dark">Lastest Date</div>
-                    <div className="col col-header bg-dark">Lastest Time</div>
+                    <div className="col-2 col-header">Status</div>
+                    <div className="col-5 col-header">Name</div>
+                    <div className="col-3 col-header">Lastest Date</div>
+                    <div className="col-2 col-header">Lastest Time</div>
                 </div>
                 
                 {this.showPatient()}
-                <p />
-                <p />
             </div>
         )
         

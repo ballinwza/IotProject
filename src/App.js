@@ -9,7 +9,7 @@ import Home from './components/layout/Home';
 import Product from './components/layout/Product';
 import Service from './components/layout/Service';
 import Contact from './components/layout/Contact';
-import SignIn from './components/layout/SignIn';
+import SignIn from './components/layout/signIn';
 import userInfo from './components/layout/userInfo';
 
 import item1 from './components/Products/Item1';
