@@ -54,8 +54,8 @@ class LineChart extends Component {
             return (
             <div>
                 <Chart 
-                    width="750px"
-                    height="400px"
+                    width="100%"
+                    height="500px"
                     chartType="LineChart"
                     loader={<div>Loading Chart</div>}
                     data={this.getData(this.props.data)}
