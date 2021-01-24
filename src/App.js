@@ -10,7 +10,7 @@ import Product from './components/layout/Product';
 import Service from './components/layout/Service';
 import Contact from './components/layout/Contact';
 import SignIn from './components/layout/SignIn';
-import userInfo from './components/layout/userInfo';
+import UserInfo from './components/layout/UserInfo';
 
 import item1 from './components/Products/Item1';
 
@@ -18,6 +18,7 @@ import Patient from './displayFirebase/pages/Patient';
 import PatientSortedList from './displayFirebase/pages/PatientSortedList';
 import PatientList from './displayFirebase/pages/PatientList';
 import Register from './displayFirebase/pages/Register';
+
 
 
 class App extends Component {

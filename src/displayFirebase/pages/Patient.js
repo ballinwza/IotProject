@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, useState} from 'react';
 import firebaseApp from '../firebaseConnection/firebase';
 import {firestore} from 'firebase';
 import queryString from 'query-string'
@@ -12,17 +12,70 @@ import { Link, Redirect } from 'react-router-dom';
 import LineChart from '../myCustomModules/LineChart';
 import '../style2.css';
 import { type } from 'jquery';
+//pop-up
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { faEdit } from "@fortawesome/free-solid-svg-icons";
+import Popup from "./Popup";
+import updateFirestore from '../../actions/updatePatientAction'
+
+
 
 class Patient extends Component {
+    state = {
+        leftColHeader:{
+            name:'',
+            gender:'',
+            date:'',
+            time:'',
+            activity:'',
+            uuid:'',
+            init:true
+        }
 
+    }
     getParams(){
-        let url = this.props.location.search;
+        //console.log("url: ",this.props.location.search)
+        let url = this.props.location.search; 
         let params = queryString.parse(url);
+        if (this.state.leftColHeader.init == true) {
+            this.setState({
+                leftColHeader:{
+                    name:params.name,
+                    gender:params.gender,
+                    date:params.date,
+                    time:params.time,
+                    activity:params.activity,
+                    uuid:params.uuid,
+                    init:false
+                }
+            })
+        }
         return params;
+    }
+    handleChangePopup = (id,value) => {
+        console.log(id,value)
+        this.setState(prevState => {
+            let leftColHeader = { ...prevState.leftColHeader };  // creating copy of state variable jasper
+            leftColHeader[id] = value;                     // update the name property, assign a new value                 
+            console.log(leftColHeader)
+            return { leftColHeader };                                 // return new object jasper object
+          })
+        console.log(this.state)
+    }
+    handleSubmitPopup = () => {
+        let uuid = this.state.leftColHeader.uuid
+        const data = {
+            date: this.state.leftColHeader.date,
+            time: this.state.leftColHeader.time,
+            activity: this.state.leftColHeader.activity
+        };
+        console.log(uuid,data)
+        this.props.updateFirestore(uuid,data,firebaseApp);
     }
 
     componentDidMount(){
         this.queryDataFromFireStore();
+        
     }
     queryDataFromFireStore(){
         const fs = firebaseApp.firestore();
@@ -34,47 +87,59 @@ class Patient extends Component {
             })
         });
     }
-
+   
     leftCol(){
-        const { uid } = this.props;//WOW!! no need to so sth like this.props.authError
+        const { uid } = this.props;//no need to so sth like this.props.authError
         if (!uid) return (<Redirect to = '/' />)
+        //pop-up
+        let leftColHeader = this.state.leftColHeader
+        
         return (
         <div className="col col-md">
             <div className="row h1 text-light font-weight-bold bg-primary pl-2">{/*this.getParams().name*/}</div>
             <div className="row-highlight"> Registered Data </div>
             <div className="row">
                 <div className="col-3">ชื่อ</div>
-                <div className="col-9">{this.getParams().name}</div>
+                <div className="col-9">{leftColHeader.name}</div>
             </div>
             <div className="row">
                 <div className="col-3">เพศ</div>
-                <div className="col-9">{this.getParams().gender}</div>
+                <div className="col-9">{leftColHeader.gender}</div>
             </div>
-            <div className="row">
-                <div className="col-3">date</div>
-                <div className="col-9">{this.getParams().date}</div>
+            <div className="card">
+                <div className="row">
+                    <div className="col-3">Date</div>
+                    <div className="col-9">{leftColHeader.date}</div>
+                </div>
+                <div className="row">
+                    <div className="col-3">Time</div>
+                    <div className="col-9">{leftColHeader.time}</div>
+                </div>
+                <div className="row">
+                    <div className="col-3">Activity</div>
+                    <div className="col-9">{leftColHeader.activity} mCi</div>
+                </div>
+                <div className="card-body">
+                    <button className="btn-download" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">
+                        <FontAwesomeIcon icon={faEdit} />
+                         Update
+                    </button>
+                </div>
             </div>
-            <div className="row">
-                <div className="col-3">time</div>
-                <div className="col-9">{this.getParams().time}</div>
-            </div>
-            <div className="row">
-                <div className="col-3">activity</div>
-                <div className="col-9">{this.getParams().activity} mCi</div>
-            </div>
-            <p />
+            <Popup previousData={leftColHeader} handleChange={this.handleChangePopup} handleSubmit={this.handleSubmitPopup}/>
+            <br/>
     
             <div className="row-highlight"> Measured Data </div>
             <div className="row">
-                <div className="col text-center table-secondary"> index </div>
-                <div className="col text-center table-secondary"> date </div>
-                <div className="col text-center table-secondary"> time </div>
-                <div className="col text-center table-secondary"> dose rate </div>
+                <div className="col text-center table-secondary"> Index </div>
+                <div className="col text-center table-secondary"> Date </div>
+                <div className="col text-center table-secondary"> Time </div>
+                <div className="col text-center table-secondary"> Dose rate </div>
             </div>
             {this.showPatient()}
             <p />
             <div className="row-highlight"> Graph Data </div>
-            <LineChart data={this.state} params={this.getParams()}/>
+            <LineChart data={this.state} updatedParams={this.getParams()}/>
         </div>
         )
     }
@@ -83,7 +148,7 @@ class Patient extends Component {
         return (
             <div className="col col-md">
                 <div className="row-highlight"> Registered QR Code </div>
-                <img class="mx-auto d-block" src={qrImage(this.getParams().uuid)} ></img>
+                <img className="mx-auto d-block" src={qrImage(this.getParams().uuid)} ></img>
                 <div className="row-highlight"> Save Data </div>
                 <p />
                 <div className="row">
@@ -103,14 +168,16 @@ class Patient extends Component {
 
     showPatient(){
         if (this.state !== null && this.state !== undefined){
-            let dbArray = Object.entries(this.state).sort(sortFunctionByDateTime).reverse();
+            let dbArray = Object.entries(this.state).filter(dbArray => dbArray[0] != "leftColHeader").sort(sortFunctionByDateTime).reverse();
             return dbArray.map((patient, index) => (
-                <div className="row" key={index}>
-                    <div className="col text-center">{index + 1}</div>
-                    <div className="col text-center">{setDateTimeFormat(patient[0])[0]}</div>
-                    <div className="col text-center">{setDateTimeFormat(patient[0])[1]}</div>
-                    <div className="col text-center">{patient[1]}</div>
-                </div>
+                
+                    <div className="row" key={index}>
+                        <div className="col text-center">{index + 1}</div>
+                        <div className="col text-center">{setDateTimeFormat(patient[0])[0]}</div>
+                        <div className="col text-center">{setDateTimeFormat(patient[0])[1]}</div>
+                        <div className="col text-center">{patient[1]}</div>
+                    </div>
+            
             ));
         }
     }
@@ -134,5 +201,10 @@ const mapStateToProps = (state) => {
         uid : state.firebase.auth.uid
     }
 }
+const mapDispatchToProps = (dispatch) =>{
+    return {
+        updateFirestore: (id, data,firebaseApp) => dispatch(updateFirestore(id, data,firebaseApp))
+    }
+}
 
-export default connect(mapStateToProps)(Patient);
+export default connect(mapStateToProps,mapDispatchToProps)(Patient);

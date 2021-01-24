@@ -6,12 +6,13 @@ import { connect } from 'react-redux'
 import { Link, Redirect } from 'react-router-dom'
 import '../style2.css';
 
+
 class PatientList extends Component{
 
     constructor(props){
         super(props);
         this.state = {
-
+            
         };
     }
 
