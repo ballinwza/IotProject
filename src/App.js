@@ -31,7 +31,7 @@ class App extends Component {
                 <Route exact path="/service" component={Service} />
                 <Route exact path="/contact" component={Contact} />
                 <Route exact path="/signIn" component={SignIn} />
-                <Route exact path="/userInfo" component={userInfo}/>
+                <Route exact path="/userInfo" component={UserInfo}/>
                 <Route exact path="/product/item1" component={item1}/>
     
                 <Route exact path="/patientsortedlist" component={PatientSortedList} />
