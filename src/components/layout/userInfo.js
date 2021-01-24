@@ -1,11 +1,12 @@
 import React,{Component} from 'react';
-import {Link} from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom'
 
 import PatientList from '../../displayFirebase/pages/PatientList';
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faChevronCircleLeft,faPlusCircle} from '@fortawesome/free-solid-svg-icons';
 import Logo from '../../images/LogoFooter.jpg';
+import { connect } from 'react-redux'
 
 class userInfo extends Component {
     state = {
@@ -28,6 +29,8 @@ class userInfo extends Component {
         }
     }
     render(){
+        const { uid } = this.props;
+        if (!uid) return (<Redirect to = '/' />)
         return(
             <div className="container-fluid"> 
                 <div className="userInfo-container">
@@ -61,4 +64,10 @@ class userInfo extends Component {
     }
 }
 
-export default userInfo ;
+const mapStateToProps = (state) => {
+    return{
+        uid : state.firebase.auth.uid
+    }
+}
+
+export default connect(mapStateToProps)(userInfo) ;

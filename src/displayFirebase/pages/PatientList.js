@@ -6,12 +6,13 @@ import { connect } from 'react-redux'
 import { Link, Redirect } from 'react-router-dom'
 
 
+
 class PatientList extends Component{
 
     constructor(props){
         super(props);
         this.state = {
-
+            
         };
     }
 
@@ -137,7 +138,7 @@ class PatientList extends Component{
 
     render(){
         //console.log(this.state);
-        const { uid } = this.props;//WOW!! no need to so sth like this.props.authError
+        const { uid } = this.props;
         if (!uid) return (<Redirect to = '/' />)
         return(
             <div className="container-fluid">
