@@ -20,7 +20,6 @@ import PatientList from './displayFirebase/pages/PatientList';
 import Register from './displayFirebase/pages/Register';
 
 
-
 class App extends Component {
 
     renderRouter(){
