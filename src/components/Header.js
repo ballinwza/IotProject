@@ -13,13 +13,12 @@ import LogoARD from '../images/ARDLogo1.png';
 
 class Header extends Component {
     
-    render() {
+    render() { 
         const {auth} = this.props
         const link = auth.uid ? <SignedInLink/> : <SignedOutLink/>
         return(
-            <nav className="navbar navbar-expand-md ">
-
-                <Link to='/' className="navbar-brand"  >
+            <nav className="navbar navbar-expand-md">
+                <Link to='/' className="navbar-brand">
                     <div className="logo-content">
                         <img src={LogoARD} ></img>
                     </div>
@@ -27,7 +26,7 @@ class Header extends Component {
         
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
                     <div className="logo-content">
-                        <img src={LogoARD} ></img>
+                        <img src={LogoARD} ></img> 
                     </div>
                 </button>
 

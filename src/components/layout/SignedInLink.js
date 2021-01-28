@@ -12,7 +12,7 @@ const SignedInLink =(props) =>{
     /*setTimeout(()=>{
         props.history.push('/about')
     },2000)*/
-    return(
+    return( 
 
         <div className="collapse navbar-collapse " id="navbarMenu">
             <ul className="navbar-nav">

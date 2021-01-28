@@ -163,7 +163,6 @@ class Patient extends Component {
         return(
             <div className="col-12">
                 <div className="Measured-container">
-
                     <div className="row">
                         <div className="col-2 col-md-1 headTable"> index </div>
                         <div className="col headTable"> date </div>

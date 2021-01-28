@@ -14,31 +14,41 @@ class Home extends Component {
                 <div className="container">
                     <div className="homeHeadText">
                         <div className="row">
-                            <div className="col-12 firstText">
+                            <div className="col-12 firstText"> 
                                 <h1>Advanced R&D Technology</h1>
                             </div>
+                            <div className="col-12 lastText"> 
+                                <h2>We are Nuclear Engineering</h2>
+                                <p>“RADIATION INSTRUMENTS for MONITORING, DETECTION AND SAFETY”</p>
+                            </div>
                             <div className="col-12 secondText">
-                                <div className="row row-cols-4 justify-content-center">
-                                    <div className="secondText-container">
-                                        <Link exact to="/product">
-                                            <img src={Picture1}/>
-                                            <div className="secondText-head">Product</div>
-                                            <p>มีการจัดจำหน่ายอุปกรณื และเครื่องมือที่ใช้งานเกี่ยวกับทางดานรังสี</p>
-                                        </Link>
+                                <div className="row row-cols-1 row-cols-md-3  justify-content-center">
+                                    <div className="secondText-main">
+                                        <div className="secondText-container">
+                                            <Link exact to="/product">
+                                                <img src={Picture1}/>
+                                                <div className="secondText-head">Product</div>
+                                                <p>มีการจัดจำหน่ายอุปกรณื และเครื่องมือที่ใช้งานเกี่ยวกับทางดานรังสี</p>
+                                            </Link>
+                                        </div>
                                     </div>
-                                    <div className="secondText-container">
-                                        <Link exact to="/services">
-                                            <img src={Picture2}/>
-                                            <div className="secondText-head">Service</div>
-                                            <p>บริษัทมีการให้บริการ ปรึกษาปัญหาที่เกี่ยวกับรังสี ซ่อมแซมเครื่องมือทางรัง สอบเทียบเครื่องรังสี และจัดอบรบเกี่ยวกับการป้องกันรังสีเบื้องต้น</p>
-                                        </Link>
+                                    <div className="secondText-main">
+                                        <div className="secondText-container">
+                                            <Link exact to="/services">
+                                                <img src={Picture2}/>
+                                                <div className="secondText-head">Service</div>
+                                                <p>ให้บริการ ปรึกษาปัญหาที่เกี่ยวกับรังสี ซ่อมแซม สอบเทียบเครื่องรังสี และจัดอบรบการป้องกันรังสีเบื้องต้น</p>
+                                            </Link>
+                                        </div>
                                     </div>
-                                    <div className="secondText-container">
-                                        <Link exact to="/contact">
-                                            <img src={Picture3}/>
-                                            <div className="secondText-head">Contact</div>
-                                            <p>สามารถติดต่อบริษัทได้ตามที่อยู่ต่อไปนี้</p>
-                                        </Link>
+                                    <div className="secondText-main">
+                                        <div className="secondText-container">
+                                            <Link exact to="/contact">
+                                                <img src={Picture3}/>
+                                                <div className="secondText-head">Contact</div>
+                                                <p>สามารถติดต่อบริษัทได้ตามที่อยู่ต่อไปนี้</p>
+                                            </Link>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

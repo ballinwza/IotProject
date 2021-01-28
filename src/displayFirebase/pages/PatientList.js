@@ -78,10 +78,10 @@ class PatientList extends Component{
         if (arr !== undefined) {
             return arr.map((patient, index) => (
                 <div className="row" key={index}>
-                    <div className={`col-2 tableDetail ${this.getStatusColor(patient)}`}>{this.getStatus(patient)}</div>
-                    <div className="col-5 tableDetail"><Link to={this.getGETParamString(patient)}>{patient.name}</Link></div>
-                    <div className="col-3 tableDetail text-center">{patient.lastestDate}</div>
-                    <div className="col-2 tableDetail text-center">{patient.lastestTime}</div>
+                    <div className={`col-2 tableList ${this.getStatusColor(patient)}`}>{this.getStatus(patient)}</div>
+                    <div className="col-5 tableList tableListColor"><Link to={this.getGETParamString(patient)}>{patient.name}</Link></div>
+                    <div className="col-3 tableList tableListColor text-center">{patient.lastestDate}</div>
+                    <div className="col-2 tableList tableListColor text-center">{patient.lastestTime}</div>
                 </div>
             ));
         }
