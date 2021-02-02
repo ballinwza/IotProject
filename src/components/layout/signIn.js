@@ -201,7 +201,7 @@ class SignIn extends Component {
         if (uid) return (<Redirect to = '/' />)
 
         return(
-            <div className ="container-fluid contain-login">
+            <div className ="container-fluid contain-login"> 
                 <div className="row  contain">
                     {this.registered()}
                     {this.overLay()}

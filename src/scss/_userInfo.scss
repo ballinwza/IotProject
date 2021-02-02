@@ -1,5 +1,5 @@
 .userInfo-container{
-    min-height: 65vh;   
+    min-height: 74vh;   
 
     & .hidden{
         opacity: 0;
@@ -7,7 +7,7 @@
     }
     & .sideBar-userInfo{
         background-color: $color-2;
-        min-height: 65vh;
+        min-height: 74vh;
         padding-top: 20px;
         transition: all .4s ease-out;
         & .img-content{
@@ -46,6 +46,9 @@
                 transition: all .4s ease-out;
                 & a{
                     color: $color-1;
+                    &:hover{
+                        text-decoration: none;
+                    }
                 }
             }
             & .text{
@@ -84,4 +87,8 @@
 .width-100{
     width: 100%;
     transition: all .4s ease-out;
+}
+
+@include respond(md) {
+
 }

@@ -39,7 +39,7 @@ class userInfo extends Component {
                             <div className={`sideBar-userInfo ${this.state.sideBar}`}>
                                 <div className="img-content"><img src={Logo} /></div>
                                 <div className="text-content">
-                                    <div className="text">โรงพยาบาล</div>
+                                    <div className="text">Ramathibodi Hospital</div>
                                 </div> 
                             </div>
                         </div>
@@ -49,7 +49,7 @@ class userInfo extends Component {
                                 <div className="userInfo-icon">
                                     <div className={`icon ${this.state.arrow}`}><Link onClick={this.showSidebar} ><FontAwesomeIcon icon={faChevronCircleLeft}/></Link></div>
                                     <div className="text">Patient List</div>
-                                    <div className="icon"><Link to="/register"><FontAwesomeIcon icon={faPlusCircle}/></Link></div>
+                                    <div className="icon"><Link to="/register">Add <FontAwesomeIcon icon={faPlusCircle}/></Link></div>
                                 </div>
                 
                                 <div className="PatientContainer">

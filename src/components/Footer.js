@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import LogoFooter from '../images/LogoFooter.jpg';
 
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { faEnvelope, faPhoneSquareAlt } from "@fortawesome/free-solid-svg-icons";
 import { faFacebookSquare, faLine } from "@fortawesome/free-brands-svg-icons";
 
 class Footer extends Component {
@@ -29,12 +30,12 @@ class Footer extends Component {
                         </a>
                         <a className="brandLink" href="/">
                             <a href="/">
-                                <FontAwesomeIcon className="brandIcon brandIcon-facebook" icon={faFacebookSquare}/>
+                                <FontAwesomeIcon className="brandIcon brandIcon-facebook" icon={faPhoneSquareAlt}/>
                             </a>
                         </a>
                         <a className="brandLink" href="/">
                             <a href="/">
-                                <FontAwesomeIcon className="brandIcon brandIcon-facebook" icon={faFacebookSquare}/>
+                                <FontAwesomeIcon className="brandIcon brandIcon-facebook" icon={faEnvelope}/>
                             </a>
                         </a>
                     </div>
