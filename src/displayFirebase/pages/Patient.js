@@ -119,15 +119,11 @@ class Patient extends Component {
                             <div className="col-2 head">activity</div>
                             <div className="col-10">{leftColHeader.activity} mCi</div>
                         </div>
-                        <div className="card-body">
-                            <button className="btn-download" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">
-                            <FontAwesomeIcon icon={faEdit} />
-                            Update
+                        <div className="btn-download">
+                            <button  data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">
+                                <FontAwesomeIcon icon={faEdit} />Update
                             </button>
                         </div>
-            
-            
-                        <br/>
                     </div>
                      <Popup previousData={this.state.leftColHeader} handleChange={this.handleChangePopup} handleSubmit={this.handleSubmitPopup}/>
                     {this.QRCode()}
@@ -192,7 +188,13 @@ class Patient extends Component {
     render(){
         return(
             <div className="container-fluid">
-                <p><Link exact to="/patientsortedlist"></Link></p>
+                <div className="row ">
+                    <div className="col-12 ">
+                        <Link exact to="/userInfo" className="backtoPatient-button">
+                            <div>Back to Patients List</div>
+                        </Link>
+                    </div>
+                </div>
                 <div className="row">
                     {this.RegisteredData()}
                     {this.GraphData()}

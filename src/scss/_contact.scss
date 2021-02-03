@@ -5,7 +5,7 @@
         padding-bottom: 10px;
         border-bottom: thin solid rgba(0,0,0,0.1);
         & h2{
-            font-size: 2.5rem;
+            font-size: 1.8rem;
             color: $color-1;
         }
     }
@@ -13,7 +13,7 @@
         display: flex;
         justify-content: center;
         & img{
-            width: 30%;
+            width: 60%;
         }
     }
 
@@ -29,7 +29,7 @@
         & .firstContent{
             text-align: start;
             padding: 20px 5%;
-            font-size: 1.4rem;
+            font-size: 1rem;
             height: auto;
             width: 100%;
             border-right: thin solid white;
@@ -61,7 +61,7 @@
             text-align: start;
             padding: 20px 8%;
             height: auto;
-            width: 50%;
+            width: 100%;
             font-size: 1rem;
             & span{
                 margin-left: 8px;
@@ -103,4 +103,65 @@
 
 .map{
     box-shadow: 1px 1px 5px 2px rgba(0,0,0,0.1);
+    height: 400px;
+    width: 100%;
+}
+
+@include respond(md) {
+    .mainContact{
+        & .HeadText{
+            & h2{
+                font-size: 2.5rem;
+            }
+        }
+        & .mainPicture{
+            & img{
+                width: 50%;
+            }
+        }
+        & .mapContainer{
+            width: 90%;
+            
+        }
+        & .mainContent{
+            & .firstContent{
+                font-size: 1.4rem;
+            }
+            & .secondContent{
+                font-size: 1.4rem;
+            }
+        }
+    }
+
+    .map{
+        height: 500px;
+        width: 100%;
+    }
+}
+
+@include respond(lg){
+    .mainContact{
+        & .HeadText{
+            & h2{
+                font-size: 2.5rem;
+            }
+        }
+        & .mainPicture{
+            & img{
+                width: 30%;
+            }
+        }
+        & .mainContent{
+            & .firstContent{
+                font-size: 1.4rem;
+            }
+            & .secondContent{
+                width: 60%;
+            }
+        }
+    }
+    .map{
+        height: 600px;
+        width: 100%;
+    }
 }

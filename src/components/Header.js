@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import { withRouter} from 'react-router-dom';
-import SignedInLink from './layout/SignedInLink'
-import SignedOutLink from './layout/SignedOutLink'
+import SignedInLink from './SignedInLink'
+import SignedOutLink from './SignedOutLink'
 import { connect } from 'react-redux'
 
 //import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

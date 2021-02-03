@@ -1,13 +1,13 @@
 import React,{Component} from 'react';
 import { connect } from 'react-redux'
 
-import Productlist from '../Productlist';
+import Productlist from '../components/Productlist';
 
-import ARMpic from '../../images/ARM.png';
-import Ranger from '../../images/Ranger.jpg';
-import Dosei from '../../images/Dosei.jpg';
-import Rad60 from '../../images/Rad60.jpg';
-import Rad7 from '../../images/Rad7.jpg';
+import ARMpic from '../images/ARM.png';
+import Ranger from '../images/Ranger.jpg';
+import Dosei from '../images/Dosei.jpg';
+import Rad60 from '../images/Rad60.jpg';
+import Rad7 from '../images/Rad7.jpg';
 
 class Product extends Component {
     constructor(props) {

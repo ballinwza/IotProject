@@ -2,7 +2,7 @@ import React,{Component}  from 'react'
 import { Link, NavLink, withRouter } from 'react-router-dom'
 //use Link to prevent refresh page(default when we use a href)
 //NavLink tell us which one is active
-import LogoARD from '../../images/ARDLogo1.png';
+import LogoARD from '../images/ARDLogo1.png';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faBars} from '@fortawesome/free-solid-svg-icons';
 
@@ -38,13 +38,15 @@ class SignedOutLink extends Component {
             <nav className="navbar navbar-expand-md">
                 <Link to='/' className="navbar-brand">
                     <div className="logo-content">
-                        <img src={LogoARD} ></img>
+                        <img src={LogoARD} ></img> 
                     </div>
                 </Link>
 
-                <div className="menubarToggleBtn" onClick={this.showMenu} role="button"><FontAwesomeIcon className="bars" icon={faBars}/></div>
+                <div className="menubarToggleBtn" onClick={this.showMenu} role="button">
+                    <FontAwesomeIcon className="bars" icon={faBars}/>
+                </div>
 
-                <div className=" navbar-collapse " id={`${this.state.menuState}`}>
+                <div className="collapse navbar-collapse " id={`${this.state.menuState}`}>
                     <ul className="navbar-nav">
                         <li className="nav-item" onClick={this.backHome}>
                             <Link to='/' className="nav-link">Home</Link>

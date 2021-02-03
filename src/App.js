@@ -3,15 +3,16 @@ import React,{Component} from 'react';
 import './style.css';
 
 import {BrowserRouter, Route, Switch, HashRouter } from "react-router-dom";
+
+import Home from './layout/Home';
+import Product from './layout/Product';
+import Service from './layout/Service';
+import Contact from './layout/Contact';
+import SignIn from './layout/SignIn';
+import UserInfo from './layout/UserInfo';
+
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Home from './components/layout/Home';
-import Product from './components/layout/Product';
-import Service from './components/layout/Service';
-import Contact from './components/layout/Contact';
-import SignIn from './components/layout/signIn';
-import UserInfo from './components/layout/userInfo';
-
 import item1 from './components/Products/Item1';
 
 import Patient from './displayFirebase/pages/Patient';

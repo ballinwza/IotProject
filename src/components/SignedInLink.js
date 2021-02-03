@@ -1,9 +1,9 @@
 import React,{Component}  from 'react'
 import { Link, NavLink, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { signOut } from '../../actions/authActions'
+import { signOut } from '../actions/authActions'
 
-import LogoARD from '../../images/ARDLogo1.png';
+import LogoARD from '../images/ARDLogo1.png';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faBars} from '@fortawesome/free-solid-svg-icons';
 

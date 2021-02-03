@@ -203,11 +203,9 @@ html {
 @keyframes Menubar {
   0% {
     opacity: 0;
-    width: 0;
     height: 0; }
   100% {
     opacity: 1;
-    width: 100%;
     height: 100%; } }
 
 @keyframes refreshMenubar {
@@ -248,7 +246,7 @@ html {
       .homeHeadText .secondText-container a {
         text-decoration: none; }
         .homeHeadText .secondText-container a img {
-          height: 370px;
+          height: 350px;
           width: 100%;
           border-radius: 5px 5px 0 0; }
         .homeHeadText .secondText-container a .secondText-head {
@@ -290,7 +288,8 @@ html {
   .homeHeadText .firstText h1 {
     font-size: 4rem; }
   .homeHeadText .secondText-container {
-    margin: 0 10px; }
+    margin: 0 10px;
+    height: 100%; }
     .homeHeadText .secondText-container a img {
       height: 230px;
       width: 100%; }
@@ -333,72 +332,72 @@ html {
 .ContainerHeader {
   position: relative; }
 
-.navbar {
+.navbar-brand {
   display: none; }
-  .navbar-brand {
+  .navbar-brand .logo-content {
     display: none; }
-    .navbar-brand .logo-content {
-      display: none; }
-  .navbar.menubarToggleBtn {
-    display: block;
-    z-index: 15; }
-  .navbar .bars {
-    font-size: 5rem;
+
+.navbar .menubarToggleBtn {
+  z-index: 100;
+  width: 100%; }
+
+.navbar .bars {
+  font-size: 5rem;
+  background-color: #861818;
+  width: 100%;
+  z-index: 12;
+  padding: 13px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.3);
+  transition: all .2s; }
+
+.navbar-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 11;
+  background-color: #861818;
+  width: 100%;
+  height: 100%;
+  padding-top: 10%;
+  animation: Menubar .3s; }
+  .navbar-nav .nav-item {
     background-color: #a74242;
-    border-radius: 50%;
-    z-index: 12;
-    padding: 13px;
-    position: fixed;
-    top: 4%;
-    right: 4%;
-    color: white;
-    cursor: pointer;
-    box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.3);
-    transition: all .2s; }
-    .navbar .bars:hover {
-      transform: scale(1.1);
-      transition: all .2s;
-      box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.2); }
-  .navbar-nav {
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 11;
-    background-color: #861818;
-    width: 100%;
-    height: 100%;
-    padding-top: 10%;
-    animation: Menubar .5s; }
-    .navbar-nav .nav-item {
-      background-color: #a74242;
-      margin: 5px 100px;
-      text-align: center;
-      font-size: 1.4rem;
-      font-weight: bold;
-      border-radius: 1rem;
+    margin: 10% 100px 0 100px;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border-radius: 1rem;
+    transition: all .3s; }
+    .navbar-nav .nav-item .nav-link {
+      padding: 3rem 2rem !important;
+      color: white;
+      cursor: pointer;
+      user-select: none; }
+    .navbar-nav .nav-item:hover {
+      background-color: white;
       transition: all .3s; }
-      .navbar-nav .nav-item .nav-link {
-        padding: 3rem 2rem !important;
-        color: white;
-        cursor: pointer;
-        user-select: none; }
-      .navbar-nav .nav-item:hover {
-        background-color: white;
-        transition: all .3s; }
-        .navbar-nav .nav-item:hover .nav-link {
-          color: #861818 !important;
-          text-shadow: 1px 1px 2px #a74242; }
+      .navbar-nav .nav-item:hover .nav-link {
+        color: #861818 !important;
+        text-shadow: 1px 1px 2px #a74242; }
 
 @media (min-width: 768px) {
+  #mobileMenuOut {
+    display: block; }
+  #mobileDisable {
+    display: block; }
+  #refresh {
+    display: block; }
   .ContainerHeader {
     z-index: 9; }
   .navbar {
     background-color: #861818; }
     .navbar-brand {
       text-align: center !important;
-      display: block; }
+      display: inline-block; }
       .navbar-brand .logo-content {
-        display: block;
+        display: inline-block;
         background-color: white;
         width: 8rem;
         height: 8rem;
@@ -479,13 +478,13 @@ footer {
     padding-bottom: 10px;
     border-bottom: thin solid rgba(0, 0, 0, 0.1); }
     .mainContact .HeadText h2 {
-      font-size: 2.5rem;
+      font-size: 1.8rem;
       color: #861818; }
   .mainContact .mainPicture {
     display: flex;
     justify-content: center; }
     .mainContact .mainPicture img {
-      width: 30%; }
+      width: 60%; }
   .mainContact .mainContent {
     display: flex;
     justify-content: space-around;
@@ -497,7 +496,7 @@ footer {
     .mainContact .mainContent .firstContent {
       text-align: start;
       padding: 20px 5%;
-      font-size: 1.4rem;
+      font-size: 1rem;
       height: auto;
       width: 100%;
       border-right: thin solid white; }
@@ -517,7 +516,7 @@ footer {
       text-align: start;
       padding: 20px 8%;
       height: auto;
-      width: 50%;
+      width: 100%;
       font-size: 1rem; }
       .mainContact .mainContent .secondContent span {
         margin-left: 8px; }
@@ -546,7 +545,37 @@ footer {
       transition: all .5s; }
 
 .map {
-  box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.1); }
+  box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.1);
+  height: 400px;
+  width: 100%; }
+
+@media (min-width: 768px) {
+  .mainContact .HeadText h2 {
+    font-size: 2.5rem; }
+  .mainContact .mainPicture img {
+    width: 50%; }
+  .mainContact .mapContainer {
+    width: 90%; }
+  .mainContact .mainContent .firstContent {
+    font-size: 1.4rem; }
+  .mainContact .mainContent .secondContent {
+    font-size: 1.4rem; }
+  .map {
+    height: 500px;
+    width: 100%; } }
+
+@media (min-width: 992px) {
+  .mainContact .HeadText h2 {
+    font-size: 2.5rem; }
+  .mainContact .mainPicture img {
+    width: 30%; }
+  .mainContact .mainContent .firstContent {
+    font-size: 1.4rem; }
+  .mainContact .mainContent .secondContent {
+    width: 60%; }
+  .map {
+    height: 600px;
+    width: 100%; } }
 
 .mainServiceContainer {
   margin: 20px 0;
@@ -682,10 +711,7 @@ footer {
 
 .contain-login {
   background-color: white;
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-height: 100vh;
+  min-height: 73vh;
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 10; }
@@ -731,12 +757,7 @@ footer {
         margin-left: 50%;
         transform: translateX(-50%); }
     .contain-login .contain .overlay-form {
-      padding: 2rem 1rem;
-      position: absolute;
-      top: 10%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 90%; }
+      width: 100%; }
       .contain-login .contain .overlay-form h1 {
         margin-bottom: 10px;
         text-align: center;
@@ -777,24 +798,34 @@ footer {
   display: flex;
   justify-content: center;
   margin-bottom: 30px;
+  margin-top: 30px;
   background-color: #861818;
   padding: 10px 0;
+  padding: 3% 0;
   border-radius: 5px; }
-  .switchLoginBtn a:hover {
-    text-decoration: none; }
+  .switchLoginBtn a {
+    display: none; }
+    .switchLoginBtn a:hover {
+      text-decoration: none; }
   .switchLoginBtn .switchButton {
     box-shadow: 0 0px 3px 1px rgba(0, 0, 0, 0.3);
     margin: 0 20px;
-    padding: 14px 8px;
-    border-radius: 50%;
+    padding: 10px 45px;
+    border-radius: 5px;
     background-color: white;
     color: #861818;
     user-select: none;
-    cursor: pointer; }
+    cursor: pointer;
+    font-size: 1.4rem;
+    text-align: center; }
 
 @media (min-width: 768px) {
   .contain-login {
-    background-image: url("./images/LoginBG.png"); }
+    background-image: url("./images/LoginBG.png");
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh; }
     .contain-login .contain {
       position: absolute;
       top: 50%;
@@ -810,11 +841,34 @@ footer {
         top: 0%;
         left: 0%;
         transform: translate(0%, 0%);
+        padding: 2rem 1rem;
         width: 100%; }
         .contain-login .contain .overlay-form .button-group {
           margin-top: 15% !important; }
+    .contain-login .switchLoginBtn a {
+      display: block; }
     .contain-login .switchLoginBtn {
-      margin-bottom: 20px; } }
+      display: flex;
+      justify-content: center;
+      background-color: #861818;
+      padding: 10px 0;
+      margin-bottom: 20px;
+      margin-top: 0px;
+      border-radius: 5px; }
+      .contain-login .switchLoginBtn a {
+        display: block; }
+        .contain-login .switchLoginBtn a:hover {
+          text-decoration: none; }
+      .contain-login .switchLoginBtn .switchButton {
+        box-shadow: 0 0px 3px 1px rgba(0, 0, 0, 0.3);
+        margin: 0 20px;
+        padding: 14px 8px;
+        border-radius: 50%;
+        background-color: white;
+        color: #861818;
+        user-select: none;
+        cursor: pointer;
+        font-size: 1rem; } }
 
 @media (min-width: 992px) {
   .contain-login .contain {
@@ -918,6 +972,50 @@ footer {
     opacity: 0;
     transition: all .4s ease-out; }
   .userInfo-container .sideBar-userInfo {
+    display: none; }
+  .userInfo-container .tableInfo .userInfo-icon {
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0 2px 3px 2px rgba(0, 0, 0, 0.1);
+    margin: 20px 10px 10px 10px;
+    padding: 10px;
+    font-size: 2rem; }
+    .userInfo-container .tableInfo .userInfo-icon .icon {
+      transition: all .4s ease-out; }
+      .userInfo-container .tableInfo .userInfo-icon .icon a {
+        color: #861818; }
+        .userInfo-container .tableInfo .userInfo-icon .icon a:hover {
+          text-decoration: none; }
+    .userInfo-container .tableInfo .userInfo-icon .iconArrow {
+      display: none; }
+    .userInfo-container .tableInfo .userInfo-icon .text {
+      color: #861818;
+      letter-spacing: 0.1rem; }
+    .userInfo-container .tableInfo .userInfo-icon .active {
+      transform: rotate(180deg);
+      transition: all .4s ease-out; }
+  .userInfo-container .tableInfo .PatientContainer {
+    padding: 0 30px 0 30px; }
+
+.width-0 {
+  width: 0%;
+  transition: all .4s ease-out; }
+
+.width-md-20 {
+  width: 0%;
+  transition: all .4s ease-out; }
+
+.width-md-80 {
+  width: 100%;
+  transition: all .4s ease-out; }
+
+.width-100 {
+  width: 100%;
+  transition: all .4s ease-out; }
+
+@media (min-width: 768px) {
+  .userInfo-container .sideBar-userInfo {
+    display: block;
     background-color: #a74242;
     min-height: 74vh;
     padding-top: 20px;
@@ -935,43 +1033,31 @@ footer {
       color: white; }
       .userInfo-container .sideBar-userInfo .text-content .text {
         font-size: 1.6rem; }
-  .userInfo-container .tableInfo .userInfo-icon {
-    display: flex;
-    justify-content: space-between;
-    box-shadow: 0 2px 3px 2px rgba(0, 0, 0, 0.1);
-    margin: 20px 10px 10px 10px;
-    padding: 10px;
-    font-size: 2rem; }
-    .userInfo-container .tableInfo .userInfo-icon .icon {
-      transition: all .4s ease-out; }
-      .userInfo-container .tableInfo .userInfo-icon .icon a {
-        color: #861818; }
-        .userInfo-container .tableInfo .userInfo-icon .icon a:hover {
-          text-decoration: none; }
-    .userInfo-container .tableInfo .userInfo-icon .text {
-      color: #861818;
-      letter-spacing: 0.1rem; }
-    .userInfo-container .tableInfo .userInfo-icon .active {
-      transform: rotate(180deg);
-      transition: all .4s ease-out; }
-  .userInfo-container .tableInfo .PatientContainer {
-    padding: 0 30px 0 30px; }
+  .userInfo-container .tableInfo .userInfo-icon .iconArrow {
+    display: block; }
+  .width-md-20 {
+    width: 20%;
+    transition: all .4s ease-out; }
+  .width-md-80 {
+    width: 80%;
+    transition: all .4s ease-out; } }
 
-.width-0 {
-  width: 0%;
-  transition: all .4s ease-out; }
-
-.width-20 {
-  width: 20%;
-  transition: all .4s ease-out; }
-
-.width-80 {
-  width: 80%;
-  transition: all .4s ease-out; }
-
-.width-100 {
-  width: 100%;
-  transition: all .4s ease-out; }
+.backtoPatient-button {
+  background-color: #a74242;
+  margin-left: 50%;
+  display: flex;
+  justify-content: center;
+  text-align: start;
+  transform: translateX(-50%);
+  margin: 10px 0 10px 50%;
+  padding: 5px 0;
+  width: 70%;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.8rem; }
+  .backtoPatient-button:hover {
+    color: white;
+    text-decoration: none; }
 
 .patientlist-table {
   min-height: 100vh; }
@@ -1080,6 +1166,10 @@ footer {
 
 .form-control {
   width: 50%; }
+
+@media (min-width: 768px) {
+  .backtoPatient-button {
+    width: 30%; } }
 
 .MainItem {
   margin: 30px 0; }

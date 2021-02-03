@@ -39,7 +39,7 @@ const Slideshow = () => {
                 วัดรังสีตั้งแต่ขนาดเล็กไปจนถึงขนาดใหญ่ โดยเรามีบุคลากรที่มีความรู้ความสามารถเฉพาะทางด้านรังสีโดยเฉพาะ <br/>
                 ที่มีประสบการณ์ทำงานไม่ต่ำกว่า 10 ปีเป็นประกัน
               </p>
-              <Link exact to='/service'><button type="button" className="btn btn-light">More</button></Link>
+              <Link exact to='/'><button type="button" className="btn btn-light">More</button></Link>
             </div>
           </div>
 
@@ -53,7 +53,7 @@ const Slideshow = () => {
                 ไปจนถึงขนาดใหญ่โดยเรามีบุคลากรที่มีความรู้ความสามารถเฉพาะ <br/>
                 ทางด้านรังสีโดยเฉพาะที่มีประสบการณ์ทำงานไม่ต่ำกว่า 10 ปีเป็นประกัน
               </p>
-              <Link exact to='/product'><button type="button" className="btn btn-dark">More</button></Link>
+              <Link exact to='/'><button type="button" className="btn btn-dark">More</button></Link>
             </div>
           </div>
 

@@ -1,9 +1,9 @@
 import React , {Component} from 'react';
 import {Link} from 'react-router-dom'
-import Slideshow from '../Slideshow';
-import Picture1 from '../../images/mainHome01.jpg';
-import Picture2 from '../../images/mainHome02.jpg';
-import Picture3 from '../../images/mainHome03.jpg';
+import Slideshow from '../components/Slideshow';
+import Picture1 from '../images/mainHome01.jpg';
+import Picture2 from '../images/mainHome02.jpg';
+import Picture3 from '../images/mainHome03.jpg';
 
 class Home extends Component {
     
@@ -25,7 +25,7 @@ class Home extends Component {
                                 <div className="row row-cols-1 row-cols-md-3  justify-content-center">
                                     <div className="secondText-main">
                                         <div className="secondText-container">
-                                            <Link exact to="/product">
+                                            <Link exact to="/">
                                                 <img src={Picture1}/>
                                                 <div className="secondText-head">Product</div>
                                                 <p>มีการจัดจำหน่ายอุปกรณื และเครื่องมือที่ใช้งานเกี่ยวกับทางดานรังสี</p>
@@ -34,7 +34,7 @@ class Home extends Component {
                                     </div>
                                     <div className="secondText-main">
                                         <div className="secondText-container">
-                                            <Link exact to="/services">
+                                            <Link exact to="/">
                                                 <img src={Picture2}/>
                                                 <div className="secondText-head">Service</div>
                                                 <p>ให้บริการ ปรึกษาปัญหาที่เกี่ยวกับรังสี ซ่อมแซม สอบเทียบเครื่องรังสี และจัดอบรบการป้องกันรังสีเบื้องต้น</p>

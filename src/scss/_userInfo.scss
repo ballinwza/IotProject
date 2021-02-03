@@ -6,38 +6,13 @@
         transition: all .4s ease-out;
     }
     & .sideBar-userInfo{
-        background-color: $color-2;
-        min-height: 74vh;
-        padding-top: 20px;
-        transition: all .4s ease-out;
-        & .img-content{
-            display: flex;
-            justify-content: center;
-            
-            & img{
-                width: 50% ;
-                height: 10%;
-                border-radius: 50%;
-            }
-        }
-
-        & .text-content{
-            text-align: center;
-            margin: 30px 0 10px 0;
-            color: white;
-
-            & .text{
-                font-size: 1.6rem;
-            }
-        }
-
-        
+        display: none;
     }
 
     & .tableInfo{
         & .userInfo-icon{
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             box-shadow: 0 2px 3px 2px rgba(0,0,0,0.1);
             margin: 20px 10px 10px 10px;
             padding: 10px;
@@ -51,6 +26,7 @@
                     }
                 }
             }
+            & .iconArrow{display: none;}
             & .text{
                 color: $color-1;
                 letter-spacing: 0.1rem;
@@ -74,13 +50,13 @@
     transition: all .4s ease-out;
 }
 
-.width-20{
-    width: 20%;
+.width-md-20{
+    width: 0%;
     transition: all .4s ease-out;
 }
 
-.width-80{
-    width: 80%;
+.width-md-80{
+    width: 100%;
     transition: all .4s ease-out;
 }
 
@@ -90,5 +66,47 @@
 }
 
 @include respond(md) {
+    .userInfo-container{
+        & .sideBar-userInfo{
+            display: block;
+            background-color: $color-2;
+            min-height: 74vh;
+            padding-top: 20px;
+            transition: all .4s ease-out;
+            & .img-content{
+                display: flex;
+                justify-content: center;
+                
+                & img{
+                    width: 50% ;
+                    height: 10%;
+                    border-radius: 50%;
+                }
+            }
+    
+            & .text-content{
+                text-align: center;
+                margin: 30px 0 10px 0;
+                color: white;
+    
+                & .text{
+                    font-size: 1.6rem;
+                }
+            }
+        }
+        & .tableInfo{
+            & .userInfo-icon{
+                & .iconArrow{display: block;}
+            }
+        }
+    }
 
+    .width-md-20{
+        width: 20%;
+        transition: all .4s ease-out;
+    }
+    .width-md-80{
+        width: 80%;
+        transition: all .4s ease-out;
+    }
 }

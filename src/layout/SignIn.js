@@ -1,12 +1,12 @@
 import React,{Component} from 'react';
 import { connect } from 'react-redux'
-import { signIn } from '../../actions/authActions'
+import { signIn } from '../actions/authActions'
 import { Link,Redirect } from 'react-router-dom'
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faUser,faLock,faRegistered} from '@fortawesome/free-solid-svg-icons';
 
-import LogoARD from '../../images/LogoFooter.jpg'
+import LogoARD from '../images/LogoFooter.jpg'
 import { render } from '@testing-library/react';
 
 
@@ -54,7 +54,7 @@ class SignIn extends Component {
         return(
             <div className="switchLoginBtn">
                 <div onClick={this.switchLogin} className="switchButton">Login</div>
-                <Link to="/"><div className="switchButton">Home</div></Link>
+                <Link to="/" id="switchHome"><div className="switchButton " >Home</div></Link>
                 <div onClick={this.switchRegister} className="switchButton">Regis</div>
             </div>
         )

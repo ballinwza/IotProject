@@ -79,9 +79,9 @@ class PatientList extends Component{
             return arr.map((patient, index) => (
                 <div className="row" key={index}>
                     <div className={`col-2 tableList ${this.getStatusColor(patient)}`}>{this.getStatus(patient)}</div>
-                    <div className="col-5 tableList tableListColor"><Link to={this.getGETParamString(patient)}>{patient.name}</Link></div>
+                    <div className="col-4 tableList tableListColor"><Link to={this.getGETParamString(patient)}>{patient.name}</Link></div>
                     <div className="col-3 tableList tableListColor text-center">{patient.lastestDate}</div>
-                    <div className="col-2 tableList tableListColor text-center">{patient.lastestTime}</div>
+                    <div className="col-3 tableList tableListColor text-center">{patient.lastestTime}</div>
                 </div>
             ));
         }
@@ -144,9 +144,9 @@ class PatientList extends Component{
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-2 col-header">Status</div>
-                    <div className="col-5 col-header">Name</div>
+                    <div className="col-4 col-header">Name</div>
                     <div className="col-3 col-header">Lastest Date</div>
-                    <div className="col-2 col-header">Lastest Time</div>
+                    <div className="col-3 col-header">Lastest Time</div>
                 </div>
                 
                 {this.showPatient()}

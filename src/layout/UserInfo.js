@@ -1,18 +1,18 @@
 import React,{Component} from 'react';
 import { Link, Redirect } from 'react-router-dom'
 
-import PatientList from '../../displayFirebase/pages/PatientList';
+import PatientList from '../displayFirebase/pages/PatientList';
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faChevronCircleLeft,faPlusCircle} from '@fortawesome/free-solid-svg-icons';
-import Logo from '../../images/LogoFooter.jpg';
+import Logo from '../images/LogoFooter.jpg';
 import { connect } from 'react-redux'
 
-class userInfo extends Component {
+class UserInfo extends Component {
     state = {
         sideBar:'',
-        column1:'width-20',
-        column2:'width-80',
+        column1:'width-md-20',
+        column2:'width-md-80',
         arrow:''
     }
     showSidebar = () =>{
@@ -23,8 +23,8 @@ class userInfo extends Component {
             this.setState({arrow: 'active'});
         } else{
             this.setState({sideBar: ''});
-            this.setState({column1: 'width-20'});
-            this.setState({column2: 'width-80'});
+            this.setState({column1: 'width-md-20'});
+            this.setState({column2: 'width-md-80'});
             this.setState({arrow: ''});
         }
     }
@@ -39,7 +39,7 @@ class userInfo extends Component {
                             <div className={`sideBar-userInfo ${this.state.sideBar}`}>
                                 <div className="img-content"><img src={Logo} /></div>
                                 <div className="text-content">
-                                    <div className="text">Ramathibodi Hospital</div>
+                                    <div className="text">Ramathibodi<br/>Hospital</div>
                                 </div> 
                             </div>
                         </div>
@@ -47,8 +47,8 @@ class userInfo extends Component {
                         <div className={`${this.state.column2}`}>
                             <div className="tableInfo">
                                 <div className="userInfo-icon">
-                                    <div className={`icon ${this.state.arrow}`}><Link onClick={this.showSidebar} ><FontAwesomeIcon icon={faChevronCircleLeft}/></Link></div>
-                                    <div className="text">Patient List</div>
+                                    <div className={`icon iconArrow ${this.state.arrow}`}><Link onClick={this.showSidebar} ><FontAwesomeIcon icon={faChevronCircleLeft}/></Link></div>
+                                    <div className="text">Patients List</div>
                                     <div className="icon"><Link to="/register">Add <FontAwesomeIcon icon={faPlusCircle}/></Link></div>
                                 </div>
                 
@@ -70,4 +70,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(userInfo) ;
+export default connect(mapStateToProps)(UserInfo) ;
