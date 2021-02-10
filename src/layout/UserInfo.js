@@ -39,7 +39,7 @@ class UserInfo extends Component {
                             <div className={`sideBar-userInfo ${this.state.sideBar}`}>
                                 <div className="img-content"><img src={Logo} /></div>
                                 <div className="text-content">
-                                    <div className="text">Ramathibodi<br/>Hospital</div>
+                                    <div className="text">ARDTech</div>
                                 </div> 
                             </div>
                         </div>
